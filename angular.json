@@ -27,11 +27,21 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           },
-          "configurations": {
+          "configurations": {        
+            "tr": {
+              "localize": ["tr-TR"]
+            },         
+            "en": {
+              "localize": ["en-US"]
+            },
+            "fr": {
+              "localize": ["fr-FR"]
+            },
             "production": {
               "budgets": [
                 {
@@ -72,6 +82,12 @@
             },
             "development": {
               "browserTarget": "commons-admin-web-angular:build:development"
+            },            
+            "tr": {
+              "browserTarget": "commons-admin-web-angular:build:tr"
+            },            
+            "fr": {
+              "browserTarget": "commons-admin-web-angular:build:fr"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +95,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "commons-admin-web-angular:build"
+            "browserTarget": "commons-admin-web-angular:build",
+            "ivy":true
           }
         },
         "test": {
@@ -94,6 +111,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

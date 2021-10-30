@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="tr-TR" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="name" datatype="html">
+        <source>Name</source>
+        <target state="signed-off">Adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="surname" datatype="html">
+        <source>Surname</source>
+        <target state="signed-off">Soyadi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+        <target state="signed-off">Açıklama</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthdate" datatype="html">
+        <source>Birth Date</source>
+        <target state="signed-off">Doğum Tarihi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff5b6405ef252a8c5f35519cc0880c2b58e7b7e2" datatype="html">
+        <source>Idendity Info</source>
+        <target state="signed-off">Kimlik Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="753cb0ea289c4ee224b235a78ec09e4c03d7d239" datatype="html">
+        <source>Connection Info</source>
+        <target state="signed-off">İletişim Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1f602e71a79fa42e61efaa01e647ebeabf959256" datatype="html">
+        <source>Ocupation Info</source>
+        <target state="signed-off">Meslek Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthcity" datatype="html">
+        <source>Birth City</source>
+        <target state="signed-off">Doğum İli</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="save" datatype="html">
+        <source>Save</source>
+        <target state="signed-off">Kaydet</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cancel" datatype="html">
+        <source>Cancel</source>
+        <target state="signed-off">İptal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="743a22d451792e77c0f0ed45fe40f9536fa2f18c" datatype="html">
+        <source>Occupation Info</source>
+        <target state="signed-off">Meslek Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>Email</source>
+        <target state="signed-off">E-Posta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mobile_phone_nu" datatype="html">
+        <source>Phone Nu</source>
+        <target state="signed-off">Cep Telefon No</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="homecity" datatype="html">
+        <source>Home City</source>
+        <target state="signed-off">Bulunduğu İl</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="address" datatype="html">
+        <source>Home Address</source>
+        <target state="signed-off">Adresi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login" datatype="html">
+        <source>Login</source>
+        <target state="signed-off">Giriş Yap</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login_header" datatype="html">
+        <source>User Login</source>
+        <target state="signed-off">Kullanıcı Girişi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password" datatype="html">
+        <source>Password</source>
+        <target state="signed-off">Şifre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mode" datatype="html">
+        <source><x id="ICU" equiv-text="{mode, select, 0 {...} 1 {...} 2 {...} other {...}}"/></source>
+        <target state="signed-off"><x id="ICU" equiv-text="{mode, select, 0 {...} 1 {...} 2 {...} other {...}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="84e55d59a19d553f60f6a87078a12100aed3b871" datatype="html">
+        <source>{VAR_SELECT, select, 0 {Add New} 1 {Edit} 2 {List} other {View} }</source>
+        <target state="signed-off">{VAR_SELECT, select, 0 {Yeni Kayıt} 1 {Güncelleme} 2 {Liste} other {Detay} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1000b515c042ad1cdcaa76d9f20b48e1bdd6730c" datatype="html">
+        <source>Groups Info</source>
+        <target state="translated">Gruplar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a5c4b6129d62d55189c4eac9d91e8682721d1900" datatype="html">
+        <source>Group Functions</source>
+        <target state="translated">Grup=>Fonksiyon</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="357c4bc33900c215d71e0178efd672d4484d8975" datatype="html">
+        <source>Group Users</source>
+        <target state="translated">Grup=>Kullanıcı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users_header" datatype="html">
+        <source>User Accounts</source>
+        <target state="signed-off">Kullanıcı Hesapları</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="groups_header" datatype="html">
+        <source>Groups</source>
+        <target state="translated">Gruplar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c22ba03540aa3217da059f45e7eab138b51a96e2" datatype="html">
+        <source>Groups</source>
+        <target state="signed-off">Gruplar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10faca3c79bbc9f5048b11d0f23cf2601ff0f5cb" datatype="html">
+        <source>Group=&gt;Functions</source>
+        <target state="signed-off">Grup=>Fonksiyonlar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="44040765ce14a33e90365e79631365e197a08ab7" datatype="html">
+        <source>Group=&gt;Users</source>
+        <target state="signed-off">Grup=>Kullanıcılar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="help" datatype="html">
+        <source>Help</source>
+        <target state="signed-off">Yardım</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_name" datatype="html">
+        <source>APPLICATION/USER MANAGEMENT</source>
+        <target state="signed-off">UYGULAMA/KULLANICI YÖNETİMİ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_code" datatype="html">
+        <source>Group Code</source>
+        <target state="signed-off">Grup Kodu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app" datatype="html">
+        <source>Application</source>
+        <target state="signed-off">Uygulama</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_header" datatype="html">
+        <source>Group Info</source>
+        <target state="signed-off">Grup Tanımı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="apps_header" datatype="html">
+        <source>Applications</source>
+        <target state="translated">Uygulamalar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="code" datatype="html">
+        <source>Code</source>
+        <target state="translated">Kodu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="apps_name" datatype="html">
+        <source>App Name</source>
+        <target state="translated">Uygulama Adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_name" datatype="html">
+        <source>Goup Name</source>
+        <target state="translated">Grup Adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mobile" datatype="html">
+        <source>Mobile</source>
+        <target state="translated">Mobil</target>
+      </trans-unit>
+      <trans-unit id="app_header" datatype="html">
+        <source>Application Info</source>
+        <target state="translated">Uygulama</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_code" datatype="html">
+        <source>Application Code</source>
+        <target state="translated">Uygulama Kodu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="target" datatype="html">
+        <source>Target</source>
+        <target state="translated">Hedef</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="url" datatype="html">
+        <source>Url</source>
+        <target state="translated">Url</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_funcs" datatype="html">
+        <source>Functions</source>
+        <target state="translated">İşlevler</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_versions" datatype="html">
+        <source>Versions</source>
+        <target state="translated">Değişiklikler</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_funcs" datatype="html">
+        <source>Group Functions</source>
+        <target state="translated">Grup İşlevleri</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_users" datatype="html">
+        <source>Group Users</source>
+        <target state="translated">Grup Kullanıcıları</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="itendity_header" datatype="html">
+        <source>Idendity Info</source>
+        <target state="translated">Kimlik Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_user" datatype="html">
+        <source>Add New User</source>
+        <target state="translated">Yeni Kullanıcı Ekle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="web" datatype="html">
+        <source>Web</source>
+        <target state="translated">Web</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="windows" datatype="html">
+        <source>Windows</source>
+        <target state="translated">Masaüstü</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="desktop" datatype="html">
+        <source>Desktop</source>
+        <target state="translated">Masaüstü</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="email_example" datatype="html">
+        <source>Ex. pat@example.com</source>
+        <target state="translated">Örnek: tengiz@gmail.com</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email_error_notvalid" datatype="html">
+        <source>Please enter a valid email addresss</source>
+        <target state="translated">Lütfen geçerli bir e-posta girin</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email_error_max" datatype="html">
+        <source>You have more than 60 characters</source>
+        <target state="translated">E-Posta adresiniz 60 harften fazla olamaz</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password_error_notvalid" datatype="html">
+        <source>Please enter your password</source>
+        <target state="translated">Şifrenizi girin</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password_error_min" datatype="html">
+        <source>You must enter at least 5 characters</source>
+        <target state="translated">Şifreniz en az 5 harf olmalıdır</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>Search</source>
+        <target state="translated">Ara</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addnew" datatype="html">
+        <source>Add New</source>
+        <target state="translated">Yeni Kayıt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="edit" datatype="html">
+        <source>Edit</source>
+        <target state="translated">Güncelleme</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="list" datatype="html">
+        <source>List</source>
+        <target state="translated">List</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="view" datatype="html">
+        <source>View</source>
+        <target state="translated">Detay</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="name_error_required" datatype="html">
+        <source>Please enter user name</source>
+        <target state="translated">Lüften kullanıcı adını giriniz</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="name_error_max" datatype="html">
+        <source>User name exeeds max 50 characters</source>
+        <target state="translated">Kullanıcı adı 50 harften fazla olmamalı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="error_required" datatype="html">
+        <source>You must enter a <x id="PH" equiv-text="fieldName"/></source>
+        <target state="translated"><x id="PH" equiv-text="fieldName"/> alanı boş geçilemez</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="error_min" datatype="html">
+        <source>Min. <x id="PH" equiv-text="minlength"/> characters for <x id="PH_1" equiv-text="fieldName"/></source>
+        <target state="translated"><x id="PH_1" equiv-text="fieldName"/> alanı en az <x id="PH" equiv-text="minlength"/> karakterden oluşmalıdır</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="error_max" datatype="html">
+        <source>Max. <x id="PH" equiv-text="maxlength"/> characters for <x id="PH_1" equiv-text="fieldName"/></source>
+        <target state="translated"><x id="PH_1" equiv-text="fieldName"/> alanı en fazla <x id="PH" equiv-text="maxlength"/> karakter olabilir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="error_patern" datatype="html">
+        <source><x id="PH" equiv-text="fieldName"/> contains illegal characters</source>
+        <target state="translated"><x id="PH" equiv-text="fieldName"/> alanı geçersiz karakter içeriyor</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="field_name" datatype="html">
+        <source>name</source>
+        <target state="translated">adi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_surname" datatype="html">
+        <source>surname</source>
+        <target state="translated">soyadı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_app_name" datatype="html">
+        <source>application name</source>
+        <target state="translated">uygulama adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_description" datatype="html">
+        <source>description</source>
+        <target state="translated">açıklama</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="add_app" datatype="html">
+        <source>Add New App</source>
+        <target state="translated">Yeni Uygulama Ekle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="organization" datatype="html">
+        <source>Organization</source>
+        <target state="translated">Organizasyon</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="author" datatype="html">
+        <source>Author</source>
+        <target state="translated">Yazar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fun_name" datatype="html">
+        <source>Func Name</source>
+        <target state="translated">İşlev Adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="field_func_name" datatype="html">
+        <source>function name</source>
+        <target state="translated">işlev adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="func_name" datatype="html">
+        <source>Func Name</source>
+        <target state="translated">İşlev Adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="target_audl" datatype="html">
+        <source>Add New/Edit/Delete/List</source>
+        <target state="translated">Giriş/Düzeltme/Silme/Liste</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_aud" datatype="html">
+        <source>Add New/Edit/Delete</source>
+        <target state="translated">Giriş/Düzeltme/Silme</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_list" datatype="html">
+        <source>List</source>
+        <target state="translated">Liste</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_view" datatype="html">
+        <source>View</source>
+        <target state="translated">Detay</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_web" datatype="html">
+        <source>Web</source>
+        <target state="translated">Web</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_desktop" datatype="html">
+        <source>Desktop</source>
+        <target state="translated">Masaüstü</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_mobile" datatype="html">
+        <source>Mobile</source>
+        <target state="translated">Mobil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="goUp" datatype="html">
+        <source>Go Up</source>
+        <target state="translated">Üste Çık</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="func_code" datatype="html">
+        <source>Func Code :</source>
+        <target state="translated">İşlev Kodu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1940851279383647062" datatype="html">
+        <source>APPLICATION/USER MANAGEMENT</source>
+        <target state="translated">UYGULAMA/KULLANICI YÖNETİMİ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">AppName</note>
+      </trans-unit>
+      <trans-unit id="8543472125708739515" datatype="html">
+        <source>APP/USER MANAGEMENT</source>
+        <target state="translated">UYGULAMA/KULLANICI YÖNETİMİ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">AppName</note>
+      </trans-unit>
+      <trans-unit id="go_up" datatype="html">
+        <source>Go Up</source>
+        <target state="translated">Üste Çık</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_func" datatype="html">
+        <source>Add Func</source>
+        <target state="translated">İşlev Ekle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_group_func" datatype="html">
+        <source>Add Function</source>
+        <target state="translated">Gruba İşlev Ekle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="remove_group_func" datatype="html">
+        <source>Remove Function</source>
+        <target state="translated">Gruptan İşlev Sil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_group" datatype="html">
+        <source>Add New Group</source>
+        <target state="translated">Yeni Grup Ekle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="no_record_found" datatype="html">
+        <source>No record found</source>
+        <target state="signed-off">Aradığınız özellikte kayıt bulunamamıştır.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logout" datatype="html">
+        <source>Logout</source>
+        <target state="signed-off">Çıkış Yap</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="change_pwd_header" datatype="html">
+        <source>Change Password</source>
+        <target state="signed-off">Şifre Değiştir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="old_password" datatype="html">
+        <source>Old Password</source>
+        <target state="signed-off">Mevcut Şifre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="new_password" datatype="html">
+        <source>New Password</source>
+        <target state="signed-off">Yeni Şifre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="change_pwd" datatype="html">
+        <source>Change</source>
+        <target state="translated">Değiştir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_password" datatype="html">
+        <source>Confirm Password</source>
+        <target state="signed-off">Şifre Onay</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password_error_match" datatype="html">
+        <source>Passwords must match</source>
+        <target state="signed-off">Şifreniz uyuşmuyor</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_common" datatype="html">
+        <source>Add New Common Code</source>
+        <target state="signed-off">Yeni Ortak Kod Ekle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="common_code_name" datatype="html">
+        <source>Code Name</source>
+        <target state="signed-off">Kod Adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="abrv" datatype="html">
+        <source>Abbreviation</source>
+        <target state="signed-off">Kısaltma</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="field_short_name" datatype="html">
+        <source>short name</source>
+        <target state="signed-off">Kısa adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="parent_items" datatype="html">
+        <source>Parent items</source>
+        <target state="signed-off">Üst elemanlar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sub_items" datatype="html">
+        <source>Sub items</source>
+        <target state="signed-off">Alt elemanlar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

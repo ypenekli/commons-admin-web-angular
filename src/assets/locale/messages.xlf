@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="help" datatype="html">
+        <source> Help </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login" datatype="html">
+        <source> Login </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logout" datatype="html">
+        <source> Logout </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8543472125708739515" datatype="html">
+        <source>APP/USER MANAGEMENT</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">AppName</note>
+      </trans-unit>
+      <trans-unit id="addnew" datatype="html">
+        <source>Add New</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="edit" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="list" datatype="html">
+        <source>List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="view" datatype="html">
+        <source>View</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/session.model.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Mode</note>
+      </trans-unit>
+      <trans-unit id="target_audl" datatype="html">
+        <source>Add New/Edit/Delete/List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_aud" datatype="html">
+        <source>Add New/Edit/Delete</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_list" datatype="html">
+        <source>List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_view" datatype="html">
+        <source>View</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="field_app_name" datatype="html">
+        <source>application name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_description" datatype="html">
+        <source>description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_func_name" datatype="html">
+        <source>function name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="save" datatype="html">
+        <source></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_header" datatype="html">
+        <source>Application Info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_code" datatype="html">
+        <source>Application Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="name" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="url" datatype="html">
+        <source>Url</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="target" datatype="html">
+        <source>Target</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="author" datatype="html">
+        <source>Author</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="organization" datatype="html">
+        <source>Organization</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cancel" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_funcs" datatype="html">
+        <source>Functions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="func_code" datatype="html">
+        <source>Func Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="func_name" datatype="html">
+        <source>Func Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_func" datatype="html">
+        <source>Add Func</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="go_up" datatype="html">
+        <source>Go Up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_versions" datatype="html">
+        <source>Versions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="code" datatype="html">
+        <source> Code </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fun_name" datatype="html">
+        <source> Func Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_app" datatype="html">
+        <source>Add New App</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="apps_name" datatype="html">
+        <source> App Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="old_password" datatype="html">
+        <source>Current Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="new_password" datatype="html">
+        <source>New Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_password" datatype="html">
+        <source>Confirm Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="change_pwd" datatype="html">
+        <source>Change</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password_error_notvalid" datatype="html">
+        <source>Please enter your password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password_error_min" datatype="html">
+        <source>You must enter at least 5 characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password_error_match" datatype="html">
+        <source>Passwords must match</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login_header" datatype="html">
+        <source>User Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email_example" datatype="html">
+        <source>Ex. pat@example.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email_error_notvalid" datatype="html">
+        <source>Please enter a valid email addresss</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email_error_max" datatype="html">
+        <source>You have more than 60 characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/auth/login/login.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="field_name" datatype="html">
+        <source>name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/base-form.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_short_name" datatype="html">
+        <source>short name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="abrv" datatype="html">
+        <source>Abbreviation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="parent_items" datatype="html">
+        <source>Parent items</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_common" datatype="html">
+        <source>Add New Common Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sub_items" datatype="html">
+        <source>Sub items</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="common_code_name" datatype="html">
+        <source> Code Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_header" datatype="html">
+        <source>Group Info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_code" datatype="html">
+        <source>Group Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app" datatype="html">
+        <source>Application</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_funcs" datatype="html">
+        <source>Group Functions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_group_func" datatype="html">
+        <source>Add Function</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="remove_group_func" datatype="html">
+        <source>Remove Function</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_users" datatype="html">
+        <source>Group Users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_group" datatype="html">
+        <source>Add New Group</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="group_name" datatype="html">
+        <source> Goup Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="field_surname" datatype="html">
+        <source>surname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/base-form.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="itendity_header" datatype="html">
+        <source>Idendity Info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="surname" datatype="html">
+        <source>Surname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthdate" datatype="html">
+        <source>Birth Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthcity" datatype="html">
+        <source>Birth City</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="753cb0ea289c4ee224b235a78ec09e4c03d7d239" datatype="html">
+        <source>Connection Info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="mobile_phone_nu" datatype="html">
+        <source>Phone Nu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="homecity" datatype="html">
+        <source>Home City</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="address" datatype="html">
+        <source>Home Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="743a22d451792e77c0f0ed45fe40f9536fa2f18c" datatype="html">
+        <source>Occupation Info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="no_record_found" datatype="html">
+        <source>No results found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_user" datatype="html">
+        <source>Add New User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="error_required" datatype="html">
+        <source>You must enter a <x id="PH" equiv-text="@@error_r"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/base-form.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="error_min" datatype="html">
+        <source>Min. <x id="PH" equiv-text="push($loc"/> characters for <x id="PH_1" equiv-text="_min:Min."/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/base-form.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="error_max" datatype="html">
+        <source>Max. <x id="PH" equiv-text="ges.push("/> characters for <x id="PH_1" equiv-text="rror_max:"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/base-form.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="error_patern" datatype="html">
+        <source><x id="PH" equiv-text="messages."/> contains illegal characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/base-form.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <note priority="1" from="description">Error</note>
+      </trans-unit>
+      <trans-unit id="target_web" datatype="html">
+        <source>Web</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_desktop" datatype="html">
+        <source>Desktop</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+      <trans-unit id="target_mobile" datatype="html">
+        <source>Mobile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/model/repositories/app.repository.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">Target</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

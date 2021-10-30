@@ -1,0 +1,10 @@
+{
+  "locales": ["tr-TR", "en-US", "fr-FR"],
+    "editor": {
+      "messageLocations": ["src/assets/locale/messages.xlf"],
+      "taskConfig": {
+        "intervalSeconds": 5,
+        "itemEachPack": 10
+      }
+    }
+}

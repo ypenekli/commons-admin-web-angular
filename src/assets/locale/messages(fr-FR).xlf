@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="tr-TR" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="name" datatype="html">
+        <source>Name</source>
+        <target state="signed-off">Adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="surname" datatype="html">
+        <source>Surname</source>
+        <target state="signed-off">Soyadi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+        <target state="signed-off">Açıklama</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthdate" datatype="html">
+        <source>Birth Date</source>
+        <target state="signed-off">Doğum Tarihi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff5b6405ef252a8c5f35519cc0880c2b58e7b7e2" datatype="html">
+        <source>Idendity Info</source>
+        <target state="signed-off">Kimlik Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="753cb0ea289c4ee224b235a78ec09e4c03d7d239" datatype="html">
+        <source>Connection Info</source>
+        <target state="signed-off">İletişim Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1f602e71a79fa42e61efaa01e647ebeabf959256" datatype="html">
+        <source>Ocupation Info</source>
+        <target state="signed-off">Meslek Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
