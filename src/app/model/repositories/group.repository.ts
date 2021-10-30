@@ -10,10 +10,12 @@ import { User } from "../entities/user.model";
 @Injectable()
 export class GroupModel implements OnInit{ 
 
-    private groups:Group[];
+    private groups:Group[] = [];
     public result:Result<Group>;  
 
-    constructor(private restService:RestService<Group>){}
+    constructor(private restService:RestService<Group>){
+        this.result = new Result(false, '', new Group(-1), 0);
+    }
 
     
     static className(){        
@@ -23,10 +25,13 @@ export class GroupModel implements OnInit{
     ngOnInit(): void { }
     
     getGroup(id: number): Group {
-        if(id != null && id > -1)
-            return this.groups.find(p => p.id == id);
-        else
-            return new Group(-1);
+        if(id != null && id > -1){
+            let g = this.groups.find(p => p.id == id);
+            if(g){
+                return g;
+            }
+        }
+        return new Group(-1);
     }
 
     public getGroups():Group[]{
@@ -65,7 +70,7 @@ export class GroupModel implements OnInit{
     
 
     saveGroup(group: Group, user:User):Observable<string> {
-        this.result = null;
+        //this.result = null;
         group = RestService.setLastUserInfo(group, user.email);   
         let isNew:boolean = group.isNew();         
        return this.restService.post(GroupModel.className(),  this.saveGroup.name, 
@@ -74,8 +79,11 @@ export class GroupModel implements OnInit{
        .pipe(map(res=>{       
             this.result = Result.fromPlain(res, new Group()); 
             if(this.result.isSuccess()){
-                group.id = this.result.getData().id;
-                group.accept();            
+                let v = this.result.getData();
+                if(v){
+                    group.id = v.id;
+                    group.accept();  
+                }            
                 if(isNew){
                     this.groups.push(group);        
                 }
@@ -85,7 +93,7 @@ export class GroupModel implements OnInit{
        
     }
 
-    getSaveResult():Result<Group>{
+    getSaveResult():Result<Group> | null{
         return this.result;
     }
 }

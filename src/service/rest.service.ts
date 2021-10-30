@@ -48,7 +48,7 @@ export class RestService<T> implements OnInit{
     
     
     getAny(callerClassName:string, fnName:string, queryName:string, className:string, 
-          pPager:Pager=null, ...pParams:FnParam[]):Observable<T[]>{
+          pPager:Pager | null, ...pParams:FnParam[]):Observable<T[]>{
       const url :string = this.getHttpConnection(callerClassName, fnName, queryName); 
       if(pPager == null)  {
         pPager = new Pager();

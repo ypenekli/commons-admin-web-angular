@@ -6,15 +6,17 @@ import { Observable, of} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FnParam } from 'src/service/fn-param.model';
 import { Pager } from 'src/service/pager.model';
+import { NullTemplateVisitor } from '@angular/compiler';
 
 @Injectable()
 export class UserModel implements OnInit{    
   
-    private users:User[];
-    public result:Result<User>;   
+    private users:User[]=[];
+    public result:Result<User> ;   
 
-    constructor(private restService:RestService<User>){}
-
+    constructor(private restService:RestService<User>){
+        this.result = new Result(false, '', new User(-1), 0);
+    }
     
     static className(){        
         return this.name;
@@ -27,13 +29,16 @@ export class UserModel implements OnInit{
     }
     
     getUser(id: number): User {
-        if(id != null && id > -1)
-            return this.users.find(p => p.id == id);
-        else
-            return new User(-1);
+        if(id != null && id > -1){
+            let u = this.users.find(p => p.id == id);
+            if(u){
+                return u;
+            }
+        }
+        return new User(-1);
     }
 
-    getSaveResult():Result<User>{
+    getSaveResult():Result<User> | null{
         return this.result;
     }
 
@@ -55,7 +60,7 @@ export class UserModel implements OnInit{
     }
 
     save(user: User, userName:string):Observable<string> {
-        this.result = null;
+       // this.result = null;
        user = RestService.setLastUserInfo(user, userName);
        let isNew:boolean = user.isNew();      
        let fnName:string = this.save.name;           
@@ -63,8 +68,11 @@ export class UserModel implements OnInit{
        .pipe(map(res=>{       
         this.result = Result.fromPlain(res, new User()); 
         if(this.result.isSuccess()){
-            user.id = this.result.getData().id;
-            user.accept();            
+            let v = this.result.getData();
+            if(v){
+                user.id = v.id;
+                user.accept();  
+            }         
             if(isNew){
                 this.users.push(user);        
             }

@@ -9,9 +9,13 @@ export class Element{
     constructor(
         private value?:any,
         private changed:boolean = false){
-            this.setTypeName();
+            if(this.value){
+                this.typeName = typeof(this.value);
+            }else this.typeName = 'string';
+           
             this.readOnly = false;
     }
+
     public getValue():any{
         return this.value;
     }
@@ -20,7 +24,7 @@ export class Element{
             this.typeName = typeof(this.value);
         }else this.typeName = 'string';
     }
-    public setValue(pValue, pChanged:boolean=true){
+    public setValue(pValue:any, pChanged:boolean=true){
         if(!this.changed && pChanged){
             this._value = this.value;
         }
@@ -52,7 +56,7 @@ export class Element{
             this._value = null;
         }       
     }    
-    static fromPlain(element:Partial<Element>):Element{
+    static fromPlain(element:Partial<any>):Element{   
         let e : Element = new Element(element['value'], element['changed']);
         e.setReadOnly(element['readOnly']);
         return e;
@@ -71,20 +75,26 @@ export abstract class DataEntity{
     private fields:Map<string, Element> = new Map<string, Element>();
     private primaryKeys:Map<string, Element> = new Map<string, Element>();   
     
-    constructor(payload?:Partial<DataEntity>){
+    constructor(payload?:Partial<any>){
         if(payload != null){          
             this.className = payload['className'] ;
             this.state = payload['state'];
             let elements : Map<string, Element> = payload['primaryKeys'];
             if(elements){
                 for(const key in elements){
-                    this.primaryKeys.set(key, Element.fromPlain(elements[key]));  
+                    let v  = elements.get(key);
+                    if(v){ 
+                        this.primaryKeys.set(key, v);  
+                    }                
                 }
             }
             elements  = payload['fields'];
             if(elements){
                 for(const key in elements){
-                    this.fields.set(key, Element.fromPlain(elements[key]));  
+                    let v  = elements.get(key);
+                    if(v){ 
+                        this.fields.set(key, v);  
+                    } 
                 }
             }  
         }
@@ -100,19 +110,23 @@ export abstract class DataEntity{
     public get(fieldName:string):any{
         fieldName = fieldName.toLowerCase();
         if(this.fields && this.fields.has(fieldName)){
-            return this.fields.get(fieldName).getValue();
-        }else return null;
+            let e = this.fields.get(fieldName);
+            if(e){
+                return e.getValue();
+            }            
+        }
+        return null;
     }
     public isNull(fieldName:string):boolean{
         return !(this.fields && this.fields.has(fieldName));
     }
-    public getElement(fieldName:string):Element{
+    public getElement(fieldName:string):Element | undefined{
         fieldName = fieldName.toLowerCase();
         return this.fields.get(fieldName);
     }
-    public set(fieldName:string, pValue, pChanged:boolean = true){
+    public set(fieldName:string, pValue:any, pChanged:boolean = true){
         fieldName = fieldName.toLowerCase();
-        var entry:Element = this.fields.get(fieldName);
+        var entry:any = this.fields.get(fieldName);
         if(entry != null){
            entry.setValue(pValue);
         }else entry = new Element(pValue, pChanged);
@@ -136,7 +150,7 @@ export abstract class DataEntity{
         this.state = DataEntity.UNCHANGED;
         this.fields.forEach((v,k)=>v.accept());
         this.primaryKeys.forEach((v,k)=>{
-            let e :Element = this.fields.get(k);
+            let e = this.fields.get(k);
             if(e != null && e.getValue() != null){
                 v.setValue(e.getValue());
             }
@@ -169,7 +183,7 @@ export abstract class DataEntity{
     public setPrimaryKeys(...keys:string[]){
         if(keys != null){
             keys.forEach(key=>{
-               let e :Element = this.getElement(key);
+               let e = this.getElement(key);
                if(e == null) {
                     e=new Element();
                }
@@ -183,14 +197,18 @@ export abstract class DataEntity{
 
     public getPrimaryKeyValue(fieldName:string) {
         fieldName = fieldName.toLowerCase();
-        var field:Element= this.primaryKeys.get(fieldName);
+        var field:any= this.primaryKeys.get(fieldName);
         if(field){
             return field.getValue;
         }else return null;       
     }
 
-    protected setDate(fieldName:string, value:Date, pChanged:boolean){         
-        this.set(fieldName, +formatDate(value, 'yyyyMMdd', "en-US") , pChanged);
+    protected setDate(fieldName:string, value:Date | null, pChanged:boolean){ 
+        if(value){
+            this.set(fieldName, +formatDate(value, 'yyyyMMdd', "en-US") , pChanged);
+        }else
+            this.set(fieldName, value , pChanged);        
+       
     }
     protected getDate(fieldName:string){        
         let value = this.get(fieldName);
@@ -229,9 +247,10 @@ export abstract class DataEntity{
         };
     }
     
-    static replacer(key, value) {        
+    static replacer(key:string, value:any) {  
+        let k1 = key;      
         if(value instanceof Map) {
-            let jsonObj={};
+            let jsonObj:any={};
             value.forEach((v, k)=>{
                 jsonObj[k]=v;
             });
@@ -241,10 +260,10 @@ export abstract class DataEntity{
         }
       }
     
-      static reviver(key, value){
+      static reviver(key:string, value:any){
           if(value && (key == 'primaryKeys' || key == 'fields')){
             let elements : Map<string, Element> = new Map();
-            value.forEach((v, k)=>{
+            value.forEach((v:any, k:string)=>{
                 elements.set(k, v);
             });
             return elements;
@@ -255,7 +274,7 @@ export abstract class DataEntity{
         return new type();
     }
 
-     static fromPlain(payload:Partial<DataEntity>, target){ 
+     static fromPlain(payload:Partial<any>, target:any){ 
         //static fromPlain<T>(payload:Partial<DataEntity>, type: { new(): T ;}){ 
         //let target:any = new type();  
         if(payload != null){ 
@@ -264,13 +283,19 @@ export abstract class DataEntity{
             let elements : Map<string, Element> = payload['primaryKeys'];
             if(elements){
                 for(const key in elements){
-                    target.primaryKeys.set(key, Element.fromPlain(elements[key]));  
+                    let v = elements.get(key);
+                    if(v){
+                        target.primaryKeys.set(key, Element.fromPlain(v)); 
+                    }
                 }
             }
             elements  = payload['fields'];
             if(elements){
                 for(const key in elements){
-                    target.fields.set(key, Element.fromPlain(elements[key]));  
+                    let v = elements.get(key);
+                    if(v){
+                        target.fields.set(key, Element.fromPlain(v)); 
+                    }
                 }
             }            
             target.accept();

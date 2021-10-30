@@ -11,7 +11,7 @@ import { User } from "../entities/user.model";
 @Injectable()
 export class AppModel implements OnInit{ 
 
-    private apps:App[];    
+    private apps:App[]=[];    
     public result:Result<App>;  
     static targets:Reference<string>[] = [
         new Reference<string>("targetWEB", $localize`:Target@@target_web:Web`),
@@ -19,7 +19,9 @@ export class AppModel implements OnInit{
         new Reference<string>("targetMOBILE", $localize`:Target@@target_mobile:Mobile`),
     ];
 
-    constructor(private restService:RestService<App>){}
+    constructor(private restService:RestService<App>){
+        this.result = new Result(false, '', new App("-1"), 0);
+    }
 
     
     static className(){        
@@ -33,15 +35,17 @@ export class AppModel implements OnInit{
     }
     getApp(id: string): App {
         console.log("id:" + id);
-        if(id != null && id != '-1')
-            return this.apps.find(p => p.id == id);
-        else{            
-            let idx:number = 0;
-            if (this.apps != null && this.apps.length > 0)
-                idx = this.apps.length;
-            idx += 1;
-            return new App(`0.${idx}`);
-        }        
+        if(id != null && id != '-1'){
+            let a = this.apps.find(p => p.id == id);
+            if(a)
+             return a;
+        }            
+        let idx:number = 0;
+        if (this.apps != null && this.apps.length > 0)
+            idx = this.apps.length;
+        idx += 1;
+        return new App(`0.${idx}`);
+               
     }
     findApps(pUserId:number):Observable<boolean>{ 
         let userId:FnParam =  new FnParam("user_id", pUserId) ;        
@@ -68,8 +72,11 @@ export class AppModel implements OnInit{
         .pipe(map(res=>{       
             this.result = Result.fromPlain(res, new App()); 
             if(this.result.isSuccess()){
-                app.id = this.result.getData().id;
-                app.accept();            
+                let v = this.result.getData();
+                if(v){
+                    app.id = v.id;
+                    app.accept();  
+                }             
                 if(isNew){
                     this.apps.push(app);        
                 }

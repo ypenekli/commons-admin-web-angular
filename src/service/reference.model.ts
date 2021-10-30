@@ -16,10 +16,12 @@ export class Reference<T> extends DataEntity{
         keyFieldName?:string, 
         valueFieldName?:string){
         super();
+        this.toStringFieldName = "";
         this.keyFieldName = keyFieldName ? keyFieldName:Reference.KEY;
         this.valueFieldName = valueFieldName ? valueFieldName:Reference.VALUE;
         this.set(this.keyFieldName, key, false);
         this.set(this.valueFieldName, value, false);
+        
     }
 
     get key():T{

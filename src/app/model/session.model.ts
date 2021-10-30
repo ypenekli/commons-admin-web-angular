@@ -6,21 +6,29 @@ import { User } from "./entities/user.model";
 
 @Injectable()
 export class Session implements OnInit{ 
+  private appId:string="";
+  private appName:string="";
+  private funcName:string="";
+  private token:string='';
+  private user:User;
+  private mAuthenticated : boolean;
+  private rootMenuList:Group[];
+  private menuList:AppFunc[];
+  private menu:AppFunc[];
 
     constructor(){
-        this.appId = "0.1";
-        this.setAppName($localize`:AppName@@@@app_name:APP/USER MANAGEMENT`);
-      this.setMenuList(null); 
+      this.appId = "0.1";
+      this.user = new User(-1);
+      this.mAuthenticated = false;
+      this.rootMenuList = [];
+      this.menuList = [];
+      this.menu = [];
+      this.setAppName($localize`:AppName@@@@app_name:APP/USER MANAGEMENT`);
+      this.setMenuList([]); 
     }
 
-    private appId:string;
-    private appName:string;
-    private funcName:string;
-    private token:string;
-    private user:User;
-    private rootMenuList:Group[];
-    private menuList:AppFunc[];
-    private menu:AppFunc[];
+   
+    
     public static routes:Map<string, string> = new Map([
       [".UserAUDL", "/users"],
       [".AppAUL", "/apps"],
@@ -75,6 +83,7 @@ export class Session implements OnInit{
     }
     setUser(user:User){
       this.user = user;
+      this.mAuthenticated = true;
     }
       
     getRootMenuList():Group[]{
@@ -114,15 +123,13 @@ export class Session implements OnInit{
           this.menu.push(home);
           this.menuList.push(sec);      
        } 
-         
-       
 
     }
     getMenu():AppFunc[]{
         return this.menu;
     }
     getMenuSubList(parentId:string):AppFunc[]{
-      let subMenu = [];
+      let subMenu:AppFunc[] = [];
       if(this.menuList != null){
         this.menuList.forEach(e => {            
           if(e.parentId == parentId){
@@ -134,14 +141,15 @@ export class Session implements OnInit{
     }
 
     get isAuthenticated(){
-        return this.user != null;
+        return this.mAuthenticated;
     } 
 
     clear(){
-        this.token = null;
-        this.user = null;
-        this.menuList = null;
-        this.menu = null;
-        this.rootMenuList = null;
+      this.user = new User(-1);
+      this.mAuthenticated = false;
+      this.token = '';
+      this.menuList = [];
+      this.menu = [];
+      this.rootMenuList = [];
     }    
 }

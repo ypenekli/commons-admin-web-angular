@@ -6,6 +6,7 @@ import { FnParam } from "src/service/fn-param.model";
 import { Result } from "src/service/result.model";
 import { Common } from "../entities/common.model";
 import { User } from "../entities/user.model";
+import { Pager } from "src/service/pager.model";
 
 @Injectable()
 export class CommonModel implements OnInit{ 
@@ -15,10 +16,12 @@ export class CommonModel implements OnInit{
 	public static  PARENT_ID_TITLE:number = 1040000000;
 	public static  PARENT_ID_POSITION:number = 1050000000;
 
-    private commons:Common[];
+    private commons:Common[] = [];
     public result:Result<Common>;  
 
-    constructor(private restService:RestService<Common>){}
+    constructor(private restService:RestService<Common>){
+        this.result = new Result(false, '', new Common(-1), 0);
+    }
 
     
     static className(){        
@@ -32,10 +35,13 @@ export class CommonModel implements OnInit{
     }
 
     getCommon(id: number): Common {
-        if(id != null && id > -1)
-            return this.commons.find(p => p.id == id);
-        else
-            return new Common(-1);
+        if(id != null && id > -1){
+            let c = this.commons.find(p => p.id == id);
+            if(c){
+                return c;
+            }
+        }
+        return new Common(-1);
     }
 
     findByParent(pParentId:number):Observable<boolean>{ 
@@ -53,7 +59,7 @@ export class CommonModel implements OnInit{
     } 
 
     saveCommon(common: Common, user:User):Observable<string> {
-        this.result = null;
+        //this.result = new Result();
         console.log("common :" + common.get("abrv"));
         common = RestService.setLastUserInfo(common, user.email);         
         let isNew:boolean = common.isNew();         
@@ -63,8 +69,11 @@ export class CommonModel implements OnInit{
        .pipe(map(res=>{       
             this.result = Result.fromPlain(res, new Common()); 
             if(this.result.isSuccess()){
-                common.id = this.result.getData().id;
-                common.accept();            
+                let v = this.result.getData();
+                if(v){
+                    common.id = v.id;
+                    common.accept();  
+                }           
                 if(isNew){
                     this.commons.push(common);        
                 }

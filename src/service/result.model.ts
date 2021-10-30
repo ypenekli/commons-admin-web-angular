@@ -1,3 +1,7 @@
+import { AppFunc } from 'src/app/model/entities/app-func.model';
+import { App } from 'src/app/model/entities/app.model';
+import { Common } from 'src/app/model/entities/common.model';
+import { Group } from 'src/app/model/entities/group.model';
 import { User } from 'src/app/model/entities/user.model';
 import { DataEntity } from './entity.model';
 import { Pager } from './pager.model';
@@ -5,10 +9,10 @@ import { Pager } from './pager.model';
 export class Result<T>{
     constructor(
         private success: boolean = false,                    
-        private message?:string,        
-        private data?: T, 
-        private errorCode?:number
-    ) {}
+        private message:string,        
+        private data: T | null, 
+        private errorCode:number
+    ) { }
     
     isSuccess(){
         return this.success;
@@ -22,7 +26,7 @@ export class Result<T>{
     setMessage(message:string){
         this.message = message;
     }
-    getData():T{
+    getData():T | null{
         return this.data;
     }
     setData(data:T){
@@ -35,8 +39,8 @@ export class Result<T>{
         this.errorCode = errorCode;
     }   
 
-   static fromPlain(payload:Partial<any>, target):Result<any>{
-        let result = new Result(payload['success'], payload['message']);
+   static fromPlain(payload:Partial<any>, target: AppFunc | Group | User | App | Common):Result<any>{
+        let result = new Result(payload['success'], payload['message'], null, 0);
         result.data = DataEntity.fromPlain(payload['data'], target);
         result.errorCode = payload['errorCode'];    
         return result;       

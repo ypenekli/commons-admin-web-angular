@@ -7,11 +7,12 @@ import { Result } from "src/service/result.model";
 import { AppFunc } from "../entities/app-func.model";
 import { Reference } from "src/service/reference.model";
 import { User } from "../entities/user.model";
+import { Pager } from "src/service/pager.model";
 
 @Injectable()
 export class AppFuncModel implements OnInit{ 
 
-    private appFuncs:AppFunc[];
+    private appFuncs:AppFunc[] = [];
     public result:Result<AppFunc>;  
      
     static targets:Reference<string>[] = [
@@ -21,7 +22,9 @@ export class AppFuncModel implements OnInit{
         new Reference<string>("targetView", $localize`:Target@@target_view:View`),
     ];
 
-    constructor(private restService:RestService<AppFunc>){}
+    constructor(private restService:RestService<AppFunc>){
+        this.result = new Result(false, '', new AppFunc("-1"), 0);
+    }
 
     
     static className(){        
@@ -38,6 +41,7 @@ export class AppFuncModel implements OnInit{
         let appAd:FnParam =  new FnParam("appid", pAppId) ; 
         let groupId :FnParam = new FnParam("groupid", pGroupId) ;         
         let fnName:string = this.findGroupAppFuncs.name;
+        
        return this.restService.getAny(AppFuncModel.className(), fnName, '-', AppFunc.name, null, appAd, groupId)         
         .pipe(map(appFuncs => {
             this.appFuncs = new Array();
@@ -62,7 +66,7 @@ export class AppFuncModel implements OnInit{
     }
 
     saveFunc(appFunc: AppFunc, groupId:number, user:User):Observable<string> {
-        this.result = null;
+        //this.result = null;
         appFunc = RestService.setLastUserInfo(appFunc, user.email);  
         let isNew:boolean = appFunc.isNew(); 
 
@@ -73,8 +77,11 @@ export class AppFuncModel implements OnInit{
         .pipe(map(res=>{       
             this.result = Result.fromPlain(res, new AppFunc()); 
             if(this.result.isSuccess()){
-                appFunc.id = this.result.getData().id;
-                appFunc.accept();            
+                let a = this.result.getData();
+                if(a){
+                    appFunc.id = a.id;
+                    appFunc.accept(); 
+                }                           
                 if(isNew){
                     this.appFuncs.push(appFunc);        
                 }

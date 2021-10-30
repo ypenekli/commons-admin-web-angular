@@ -56,14 +56,14 @@ export class User extends DataEntity{
     public set imageUrl(value:string){
         this.imUrl = value;
     }
-    private mBirthDate:Date;
-    public get birthDate():Date{
+    private mBirthDate?:Date | null;
+    public get birthDate():Date | null{
         if(this.mBirthDate== null){    
             this.mBirthDate = this.getDate('birth_date'); 
         }        
         return this.mBirthDate;
     }
-    public set birthDate(value:Date){ 
+    public set birthDate(value:Date | null){ 
         this.mBirthDate = value;      
         this.setDate('birth_date', value, true);
     }

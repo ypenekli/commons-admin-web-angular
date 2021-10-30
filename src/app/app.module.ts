@@ -22,8 +22,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { RestService } from 'src/service/rest.service';
@@ -58,7 +57,6 @@ import { Session } from './model/session.model';
     MatRadioModule,
     MatMenuModule,
     MatIconModule,
-    MatPaginator,
     MatSnackBarModule,
   ],
   providers: [Session, RestService, UserModel, GroupModel, AppFuncModel],

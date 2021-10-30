@@ -3,10 +3,10 @@ import { DataEntity } from "./entity.model";
 export class FnParam{
     constructor(public name:string, public value:Object){}
 
-    
-    static replacer(key, value) {        
+    static replacer(key:string, value:any) {  
+      let k1 = key;      
       if(value instanceof Map) {
-          let jsonObj={};
+          let jsonObj:any={};
           value.forEach((v, k)=>{
               jsonObj[k]=v;
           });
