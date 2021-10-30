@@ -1,0 +1,76 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center" class="admin-container">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+      <mat-card-title >{{modeLabel}}</mat-card-title>
+      <form  #form="ngForm" (ngSubmit)="save(form)"  autocomplete="of"
+            fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card-content>
+            <mat-tab-group mat-align-tabs="start" class="user-tab"> 
+                <mat-tab i18n-label="@@itendity_header" label="Idendity Info" name="label">
+                    <mat-form-field class="admin-full-width" style='--maxwidth:250px'>
+                        <mat-label i18n="@@name">Name</mat-label> 
+                        <input matInput required  minlength="3" maxlength="50" [(ngModel)]="user.name" name="name" #name="ngModel">
+                        <div *ngIf="hasErrors(name)"><mat-error  *ngFor="let error of getErrors(name)">{{error}}</mat-error> </div>
+                    </mat-form-field>
+                    <mat-form-field class="admin-full-width" style='--maxwidth:250px' >
+                        <mat-label i18n="@@surname">Surname</mat-label> 
+                        <input matInput required  minlength="3" maxlength="50" [(ngModel)]="user.surname" name="surname" #surname="ngModel">
+                        <div *ngIf="hasErrors(surname)"><mat-error  *ngFor="let error of getErrors(surname)">{{error}}</mat-error> </div>
+                    </mat-form-field>
+                    <p>
+                    <mat-form-field class="admin-full-width" style='--maxwidth:200px' appearance="fill">
+                        <mat-label i18n="@@birthdate">Birth Date</mat-label>
+                        <input matInput [matDatepicker]="picker" name="birthdate" [(ngModel)]="user.birthDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>              
+                    <mat-form-field class="admin-full-width" style='--maxwidth:200px' appearance="fill">
+                        <mat-label i18n="@@birthcity">Birth City</mat-label>
+                        <select matNativeControl name="birthcity" [(ngModel)]="user.birthCity">
+                            <option value="" selected></option>
+                            <option *ngFor="let city of cities" [value]="city.id">
+                            {{city.name}}
+                            </option>
+                        </select>
+                    </mat-form-field>
+                </p>
+                </mat-tab>
+                <mat-tab i18n-label label="Connection Info" name="label">
+                    <mat-form-field class="admin-full-width" style='--maxwidth:200px'>
+                        <mat-label i18n="@@email">Email</mat-label> 
+                        <input matInput type="email" name="email" [(ngModel)]="user.email" placeholder="pat@example.com">
+                    </mat-form-field>
+                    <mat-form-field class="admin-full-width" style='--maxwidth:200px'>
+                        <mat-label i18n="@@mobile_phone_nu">Phone Nu</mat-label> 
+                        <input matInput type="tel" name="mobile_phone_nu" [(ngModel)]="user.mobilePhoneNu">
+                    </mat-form-field>            
+                    <mat-form-field class="admin-full-width" style='--maxwidth:200px'>
+                        <mat-label i18n="@@homecity">Home City</mat-label>
+                        <select matNativeControl name="homecity" [(ngModel)]="user.homeCity">
+                            <option value="" selected></option>
+                            <option *ngFor="let city of cities" [value]="city.id">
+                            {{city.name}}
+                            </option>
+                        </select>
+                    </mat-form-field>
+                    <p>
+                        <mat-form-field class="admin-full-width" style='--maxwidth:300px'>
+                            <mat-label i18n="@@address">Home Address</mat-label> 
+                            <textarea matInput name="address" [(ngModel)]="user.homeAddress"></textarea>
+                        </mat-form-field>  
+                    </p> 
+                    </mat-tab>
+                <mat-tab i18n-label label="Occupation Info" name="label" disabled> Content 3 </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+        <mat-card-actions align="start">  
+            <button i18n="@@save" mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+            <button i18n="@@cancel" mat-raised-button color="warn"  (click)="onCancel()" type="button">Cancel</button>
+        </mat-card-actions>
+      </form>
+      <mat-card-footer>      
+        <mat-error *ngIf="errorMessage" >
+          {{errorMessage}}
+      </mat-error> 
+      </mat-card-footer>
+      </mat-card>
+  </section>

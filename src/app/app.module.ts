@@ -34,6 +34,7 @@ import { GroupModel } from './model/repositories/group.repository';
 import { AppFuncModel } from './model/repositories/app-func.repository';
 import { Session } from './model/session.model';
 import { AuthModule } from './components/auth/auth.module';
+import { UsersModule } from './components/users/users.module';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { AuthModule } from './components/auth/auth.module';
 
     
     AuthModule,
+    UsersModule,
   ],
   providers: [Session, RestService, UserModel, GroupModel, AppFuncModel],
   bootstrap: [AppComponent]

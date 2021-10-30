@@ -29,7 +29,7 @@ export class BaseForm {
 
     public getErrors(control:any){
         let messages:string[] = [];
-        let fieldName:string = this.fieldsToValidate.get(control.name);
+        let fieldName = this.fieldsToValidate.get(control.name);
         if(control.errors){
             for(let errorName in control.errors){
             switch(errorName){
