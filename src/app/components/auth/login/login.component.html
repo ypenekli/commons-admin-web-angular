@@ -1,1 +1,34 @@
-<p>login works!</p>
+<section fxLayout="row wrap" fxLayoutAlign="center center" class="login-container">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+      <mat-card-title i18n="@@login_header">User Login</mat-card-title>
+      <form [formGroup]="form" autocomplete="on" novalidate (ngSubmit)="login(form.value)" fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card-content>
+          <p>
+          <mat-form-field > 
+            <mat-label i18n="@@email">Email</mat-label> 
+            <input matInput formControlName="username" type="email" id="username"> 
+            <mat-hint align="end" i18n="@@email_example">Ex. pat@example.com</mat-hint>
+            <mat-error *ngIf="hasError('username', 'required')" i18n="@@email_error_notvalid">Please enter a valid email addresss</mat-error>
+            <mat-error *ngIf="hasError('username', 'maxlength')" i18n="@@email_error_max">You have more than 60 characters</mat-error>
+          </mat-form-field>
+        </p>
+          <mat-form-field >
+            <mat-label i18n="@@password">Password</mat-label> 
+            <input matInput formControlName="password" type="password" id="password">          
+            <mat-error *ngIf="hasError('password', 'required')" i18n="@@password_error_notvalid">Please enter your password</mat-error>
+            <mat-error *ngIf="hasError('password', 'minlength')" i18n="@@password_error_min">You must enter at least 5 characters</mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions align="start">        
+          <button i18n="@@login" mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Login</button>                  
+          <button i18n="@@cancel" mat-raised-button color="warn" (click)="onCancel()" type="button">Cancel</button> 
+        </mat-card-actions>
+      </form>
+      <mat-card-footer>      
+        <mat-error *ngIf="errorMessage" >
+          {{errorMessage}}
+      </mat-error> 
+      </mat-card-footer>
+      </mat-card>
+  </section>

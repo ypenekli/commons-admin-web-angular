@@ -79,10 +79,10 @@ export abstract class DataEntity{
         if(payload != null){          
             this.className = payload['className'] ;
             this.state = payload['state'];
-            let elements : Map<string, Element> = payload['primaryKeys'];
+            let elements  = payload['primaryKeys'];
             if(elements){
                 for(const key in elements){
-                    let v  = elements.get(key);
+                    let v  = elements[key];
                     if(v){ 
                         this.primaryKeys.set(key, v);  
                     }                
@@ -91,7 +91,7 @@ export abstract class DataEntity{
             elements  = payload['fields'];
             if(elements){
                 for(const key in elements){
-                    let v  = elements.get(key);
+                    let v  = elements[key];
                     if(v){ 
                         this.fields.set(key, v);  
                     } 
@@ -280,10 +280,10 @@ export abstract class DataEntity{
         if(payload != null){ 
             target.className = payload['className'] ;
             target.state = payload['state'];
-            let elements : Map<string, Element> = payload['primaryKeys'];
+            let elements  = payload['primaryKeys'];
             if(elements){
                 for(const key in elements){
-                    let v = elements.get(key);
+                    let v = elements[key];
                     if(v){
                         target.primaryKeys.set(key, Element.fromPlain(v)); 
                     }
@@ -292,7 +292,7 @@ export abstract class DataEntity{
             elements  = payload['fields'];
             if(elements){
                 for(const key in elements){
-                    let v = elements.get(key);
+                    let v = elements[key];
                     if(v){
                         target.fields.set(key, Element.fromPlain(v)); 
                     }
