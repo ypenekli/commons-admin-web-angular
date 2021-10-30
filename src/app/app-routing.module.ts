@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppFormComponent } from './components/apps/app-form/app-form.component';
+import { AppListComponent } from './components/apps/app-list/app-list.component';
 import { ChangePwdComponent } from './components/auth/change-pwd/change-pwd.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
@@ -11,6 +13,8 @@ const routes: Routes = [
   {path:"addacc", component:LoginComponent},
   {path:"user/:mode/:id", component:UserFormComponent},
   {path:"users", component:UserListComponent},
+  {path:"app/:mode/:id", component:AppFormComponent},
+  {path:"apps", component:AppListComponent},
 ];
 
 

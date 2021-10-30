@@ -62,7 +62,7 @@ export class AppModel implements OnInit{
     
 
     saveApp(app: App, user:User):Observable<string> {
-        this.result = null;
+        //this.result = null;
         app = RestService.setLastUserInfo(app, user.email);  
         let isNew:boolean = app.isNew();  
 
