@@ -1,0 +1,29 @@
+.change_pwd-container{
+    position: fixed;
+    top: 40%;
+    left: 50%; 
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    width:80%;
+    max-width: 400px;
+   }
+   
+ ::ng-deep .mat-input-wrapper{
+   width:300px !important;
+ }
+
+ .change_pwd-form {
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.change_pwd-full-width {
+  width: 100%;
+  max-width: var(--maxwidth);
+}
+
+
+.change_pwd-button-row .mat-button-base {
+  margin: 8px 8px 8px 8px;
+}

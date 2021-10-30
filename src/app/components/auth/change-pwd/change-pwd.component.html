@@ -1,1 +1,44 @@
-<p>change-pwd works!</p>
+<section fxLayout="row wrap" fxLayoutAlign="center center" class="change_pwd-container">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+      <mat-card-title >{{session.getUser().email}}</mat-card-title>
+      <form [formGroup]="form" autocomplete="on" novalidate (ngSubmit)="change_pwd(form.value)" fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card-content>
+        <p>
+          <mat-form-field >
+            <mat-label i18n="@@old_password">Current Password</mat-label> 
+            <input matInput formControlName="old_password" type="password" id="old_password">          
+            <mat-error *ngIf="hasError('old_password', 'required')" i18n="@@password_error_notvalid">Please enter your password</mat-error>
+            <mat-error *ngIf="hasError('old_password', 'minlength')" i18n="@@password_error_min">You must enter at least 5 characters</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field >
+            <mat-label i18n="@@new_password">New Password</mat-label> 
+            <input matInput formControlName="new_password1" type="password" id="new_password1">          
+            <mat-error *ngIf="hasError('new_password1', 'required')" i18n="@@password_error_notvalid">Please enter your password</mat-error>
+            <mat-error *ngIf="hasError('new_password1', 'minlength')" i18n="@@password_error_min">You must enter at least 5 characters</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field >
+            <mat-label i18n="@@confirm_password">Confirm Password</mat-label> 
+            <input matInput formControlName="new_password2" type="password" id="new_password2">          
+            <mat-error *ngIf="hasError('new_password2', 'required')" i18n="@@password_error_notvalid">Please enter your password</mat-error>
+            <mat-error *ngIf="hasError('new_password2', 'minlength')" i18n="@@password_error_min">You must enter at least 5 characters</mat-error>
+            <mat-error *ngIf="hasError('new_password2', 'mustMatch')" i18n="@@password_error_match">Passwords must match</mat-error>            
+          </mat-form-field>
+        </p>
+        </mat-card-content>       
+        <mat-card-actions align="start">        
+          <button i18n="@@change_pwd" mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Change</button>                  
+          <button i18n="@@cancel" mat-raised-button color="warn" (click)="onCancel()" type="button">Cancel</button> 
+        </mat-card-actions>
+      </form>
+      <mat-card-footer>      
+        <mat-error *ngIf="errorMessage" >
+          {{errorMessage}}
+      </mat-error> 
+      </mat-card-footer>
+      </mat-card>
+  </section>

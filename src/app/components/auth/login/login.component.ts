@@ -17,8 +17,8 @@ import { Session } from 'src/app/model/session.model';
 export class LoginComponent implements OnInit {
 
   public form: FormGroup | any;
-  public username : FormControl | any;
-  public password : FormControl | any;
+  //public username : FormControl | any;
+  //public password : FormControl | any;
   public errorMessage:string = '';
 
   constructor(    
