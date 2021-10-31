@@ -37,6 +37,8 @@ import { AuthModule } from './components/auth/auth.module';
 import { UsersModule } from './components/users/users.module';
 import { AppsModule } from './components/apps/apps.module';
 import { GroupsModule } from './components/groups/groups.module';
+import { CommonsModule } from './components/commons/commons.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -66,12 +68,14 @@ import { GroupsModule } from './components/groups/groups.module';
     MatMenuModule,
     MatIconModule,
     MatSnackBarModule,
+    MatPaginatorModule,
 
     
     AuthModule,
     UsersModule,
     AppsModule,
-    GroupsModule,
+    GroupsModule,    
+    CommonsModule
   ],
   providers: [Session, RestService, UserModel, GroupModel, AppFuncModel],
   bootstrap: [AppComponent]

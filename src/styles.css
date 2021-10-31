@@ -2,3 +2,63 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.admin-container{
+    max-width: 700px;
+    padding-left: 5px;
+    position: relative;
+} 
+.admin-form {
+    margin: 0px 0px 0px 0px;
+    min-width: 150px;
+    width: 100%;
+}
+.admin-tab {
+    min-width: 50px;
+    width: 100%;
+} 
+.admin-table{
+    width: 100%;
+}
+.mat-column-admin {
+    padding-left: 25px;
+} 
+.admin-full-width {
+    width: 100%;
+    max-width: var(--maxwidth);
+}
+.admin-button-row .mat-button-base {
+    margin: 8px 8px 8px 8px;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border-left:5px solid #a94442;
+}
+.form-control.ng-dirty.ng-valid{
+    border-left:5px solid #42A948;
+}
+.mod-label{
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+.admin-form-header-table{
+    table-layout: fixed;
+    width:100%
+}
+.admin-form-header-table tbody th{
+    word-wrap:break-word;
+    text-align: right;
+}
+.admin-form-header-table tbody td{
+    text-align: left;
+}
+.spacer{
+    flex:1 1 auto;
+}
+#add-button{
+    right: 40px;
+    bottom: 10px;
+    left: auto;
+    position: absolute;
+}

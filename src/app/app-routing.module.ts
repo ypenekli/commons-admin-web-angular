@@ -4,6 +4,8 @@ import { AppFormComponent } from './components/apps/app-form/app-form.component'
 import { AppListComponent } from './components/apps/app-list/app-list.component';
 import { ChangePwdComponent } from './components/auth/change-pwd/change-pwd.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { CommCodeFormComponent } from './components/commons/comm-code-form/comm-code-form.component';
+import { CommCodeListComponent } from './components/commons/comm-code-list/comm-code-list.component';
 import { GroupFormComponent } from './components/groups/group-form/group-form.component';
 import { GroupListComponent } from './components/groups/group-list/group-list.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
@@ -19,6 +21,10 @@ const routes: Routes = [
   {path:"apps", component:AppListComponent},
   {path:"group/:mode/:id", component:GroupFormComponent},
   {path:"groups", component:GroupListComponent},
+  {path:"commons", component:CommCodeListComponent},
+  {path:"commons/:parent_id", component:CommCodeListComponent},
+  {path:"commons2/:parent_id", component:CommCodeListComponent},
+  {path:"common/:mode/:id", component:CommCodeFormComponent},
 ];
 
 

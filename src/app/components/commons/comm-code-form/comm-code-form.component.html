@@ -1,0 +1,40 @@
+<section fxLayout="row wrap" fxLayoutAlign="left center" class="admin-container">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+      <mat-card-title >{{common.parentName}}</mat-card-title>
+      <form #form="ngForm" (ngSubmit)="save(form)" autocomplete="on" novalidate fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-card-content>
+            <p>
+                <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
+                    <mat-label i18n="@@name">Name</mat-label> 
+                    <input matInput required  minlength="3" [(ngModel)]="common.name" name="name" #name="ngModel">        
+                    <div *ngIf="hasErrors(name)"><mat-error  *ngFor="let error of getErrors(name)">{{error}}</mat-error> </div> 
+                </mat-form-field> 
+            </p>
+            <p>
+                <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
+                    <mat-label i18n="@@abrv">Abbreviation</mat-label> 
+                    <input matInput required  minlength="3" [(ngModel)]="common.abrv" name="abrv" #abrv="ngModel">        
+                    <div *ngIf="hasErrors(abrv)"><mat-error  *ngFor="let error of getErrors(abrv)">{{error}}</mat-error> </div> 
+                </mat-form-field> 
+            </p> 
+            <p>
+                <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
+                    <mat-label i18n="@@description">Description</mat-label>
+                    <input matInput required  minlength="5" maxlength="100" [(ngModel)]="common.description" name="description" #description="ngModel">
+                    <div *ngIf="hasErrors(description)"><mat-error  *ngFor="let error of getErrors(description)">{{error}}</mat-error> </div>                               
+                </mat-form-field> 
+            </p>
+        </mat-card-content> 
+        <mat-card-actions align="start">        
+          <button i18n="@@save" mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Save</button>                  
+          <button i18n="@@cancel" mat-raised-button color="warn" class="ml-5" [routerLink]="['/commons2', common.parentId]">Cancel</button>   
+        </mat-card-actions>        
+      </form>
+      <mat-card-footer>      
+        <mat-error *ngIf="getSaveResult()" >
+          {{getSaveResult().getMessage()}}
+      </mat-error> 
+      </mat-card-footer>
+      </mat-card>
+  </section>
