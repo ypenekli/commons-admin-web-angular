@@ -932,6 +932,22 @@
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3161491425402433702" datatype="html">
+        <source>Occupation Info</source>
+        <target state="signed-off">Meslek Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8269979081095367854" datatype="html">
+        <source>Connection Info</source>
+        <target state="signed-off">Bağlantı Bilgisi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

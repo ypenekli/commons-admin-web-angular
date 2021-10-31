@@ -15,9 +15,7 @@
       <button mat-raised-button  color="warn" (click)="close(drawer)" i18n="@@help">
         Help
       </button>      
-      <button mat-raised-button color="primary" [hidden]="isAuthenticated" [routerLink]="getUrl('.Login')" (click)="close(drawer)" i18n="@@login">
-        Login
-      </button>      
+      <button mat-raised-button color="primary" [hidden]="isAuthenticated" [routerLink]="getUrl('.Login')" (click)="close(drawer)" i18n="@@login">Login</button>
       <button mat-raised-button color="primary" [hidden]="!isAuthenticated"  (click)="logout(drawer)" i18n="@@logout">
         Logout
       </button>

@@ -12,7 +12,14 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "app", 
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "tr-TR": "src/assets/locale/messages(tr-TR).xlf",
+          "fr-FR": "src/assets/locale/messages(fr-FR).xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -35,9 +42,6 @@
           "configurations": {        
             "tr": {
               "localize": ["tr-TR"]
-            },         
-            "en": {
-              "localize": ["en-US"]
             },
             "fr": {
               "localize": ["fr-FR"]
@@ -82,7 +86,7 @@
             },
             "development": {
               "browserTarget": "commons-admin-web-angular:build:development"
-            },            
+            },             
             "tr": {
               "browserTarget": "commons-admin-web-angular:build:tr"
             },            
@@ -95,8 +99,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "commons-admin-web-angular:build",
-            "ivy":true
+            "browserTarget": "commons-admin-web-angular:build"
           }
         },
         "test": {
