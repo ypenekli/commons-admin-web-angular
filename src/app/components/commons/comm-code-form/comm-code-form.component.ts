@@ -28,6 +28,7 @@ export class CommCodeFormComponent extends BaseForm implements OnInit {
     }
 
   ngOnInit(): void {
+    this.messages = '';
     this.common = this.repository.getCommon(this.id) ;
     this.fieldsToValidate = new Map([
       ["name", $localize`:FieldName@@field_name:name`],
@@ -43,15 +44,11 @@ export class CommCodeFormComponent extends BaseForm implements OnInit {
     if(form.valid){    
       this.repository.saveCommon(this.common, this.session.getUser())
       .subscribe(message=>{
+        this.messages = message;
         this.snackBar.open(message, $localize`:@@save:`, {
           duration: 2000,
         });
       });    
     }
   }
-
-  getSaveResult():Result<Common>{
-    return this.repository.getSaveResult();
-  }
-
 }

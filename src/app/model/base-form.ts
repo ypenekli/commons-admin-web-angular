@@ -3,6 +3,8 @@ import { Session } from "./session.model";
 
 export class BaseForm {
     protected mode: number =  0;
+    public messages:string='';
+    
     constructor(
         protected activeRoute?: ActivatedRoute){     
             if(activeRoute != null){

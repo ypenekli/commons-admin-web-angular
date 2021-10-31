@@ -32,8 +32,8 @@
         </mat-card-actions>        
       </form>
       <mat-card-footer>      
-        <mat-error *ngIf="getSaveResult()" >
-          {{getSaveResult().getMessage()}}
+        <mat-error *ngIf="messages" >
+          {{messages}}
       </mat-error> 
       </mat-card-footer>
       </mat-card>

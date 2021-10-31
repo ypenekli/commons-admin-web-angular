@@ -14,8 +14,7 @@ import { Session } from 'src/app/model/session.model';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent extends BaseForm implements OnInit {  
-  errorMessage:string = ''; 
+export class UserFormComponent extends BaseForm implements OnInit {    
   user: User = new User();
   cities:Common[] = [];
   titles:Common[] = [];
@@ -37,6 +36,7 @@ export class UserFormComponent extends BaseForm implements OnInit {
     }
 
   ngOnInit(): void {
+    this.messages = '';
     this.commonModel.findByParent(CommonModel.PARENT_ID_CITY_TR)
     .subscribe(res=>{
       this.cities = this.commonModel.getCommons();
@@ -52,6 +52,7 @@ export class UserFormComponent extends BaseForm implements OnInit {
     if(form.valid){    
       this.repository.save(this.user, this.session.getUser().email)
       .subscribe(message=>{
+        this.messages = message;
         this.snackBar.open(message, $localize`:@@save:`, {
           duration: 2000,
         });
