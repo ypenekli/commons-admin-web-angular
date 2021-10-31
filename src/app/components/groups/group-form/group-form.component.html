@@ -1,0 +1,88 @@
+<div class="admin-container">
+    <mat-tab-group mat-align-tabs="start" class="admin-tab"> 
+        <mat-tab i18n-label="@@group_header"  label="Group Info" name="label">
+            <form #form="ngForm" (ngSubmit)="save(form)" class="admin-form">
+                <mat-toolbar>
+                    <mat-label i18n="@@group_code">Group Code</mat-label>
+                    <mat-label>: {{group.id}}</mat-label>
+                    <span class="spacer"></span>
+                    <mat-label>({{modeLabel}})</mat-label>
+                </mat-toolbar> 
+                <p>            
+                <mat-form-field class="admin-full-width" style='--maxwidth:400px' appearance="fill">
+                    <mat-label i18n="@@app">Application</mat-label>
+                    <select matNativeControl name="appid" [(ngModel)]="group.appId">
+                        <option value="" selected></option>
+                        <option *ngFor="let app of apps" [value]="app.id">
+                        {{app.name}}
+                        </option>
+                    </select>
+                </mat-form-field>
+                </p> 
+                <p>
+                <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
+                    <mat-label i18n="@@name">Name</mat-label> 
+                    <input matInput name="name" [(ngModel)]="group.name">
+                </mat-form-field> 
+                </p> 
+                <div class="admin-button-row">            
+                    <button i18n="@@save" mat-raised-button color="primary" type="submit">Save</button>
+                    <button i18n="@@cancel" mat-raised-button color="warn"  class="ml-5" [routerLink]="['/groups']">Cancel</button>
+                </div>
+                <div *ngIf="getSaveMessage()" class="alert alert-warning mt-3">
+                    <div class="label">{{getSaveMessage()}}</div>
+                </div>   
+            </form> 
+        </mat-tab>
+        <mat-tab i18n-label="@@group_funcs" label="Group Functions" name="label">   
+           
+          <table mat-table [dataSource]="groupAppFuncs" class="admin-table">            
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="selected">
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"
+                              [indeterminate]="selection.hasValue() && !isAllSelected()">
+                </mat-checkbox>
+              </th>
+              <td mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? subToggle($event, row) : null"
+                              [checked]="isChecked(row)"
+                              [indeterminate]="isSubHasValue(row)">
+                </mat-checkbox>
+              </td>
+            </ng-container>              
+            <!-- Group Id Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef i18n="@@code"> Code </th>
+                <td mat-cell *matCellDef="let groupAppFunc"> {{groupAppFunc.id}} </td>
+            </ng-container>
+            <!-- Goup Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef i18n="@@func_name">Func Name</th>
+                <td mat-cell *matCellDef="let groupAppFunc"> {{groupAppFunc.name}} </td>
+            </ng-container> 
+            
+            <tr mat-header-row *matHeaderRowDef="groupAppFuncDisplayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: groupAppFuncDisplayedColumns;"
+                (click)="selection.toggle(row)">
+            </tr>
+          </table>    
+          <div align="start">            
+              <button mat-fab color="accent"  (click)="onLogSelection()" type="button"  
+                      matTooltip="Add Function" i18n-matTooltip="@@add_group_func" name="matTooltip">
+                      <mat-icon>add_circle_outline</mat-icon>
+              </button>            
+              <button mat-fab color="warn"  (click)="onDelete()" type="button"  
+                      matTooltip="Remove Function" i18n-matTooltip="@@remove_group_func" name="matTooltip">
+                      <mat-icon>delete</mat-icon>
+              </button>  
+          </div> 
+
+        </mat-tab>    
+        <mat-tab i18n-label="@@group_users" label="Group Users" name="label">        
+        </mat-tab>
+    </mat-tab-group>
+    </div>
+

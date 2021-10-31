@@ -4,6 +4,8 @@ import { AppFormComponent } from './components/apps/app-form/app-form.component'
 import { AppListComponent } from './components/apps/app-list/app-list.component';
 import { ChangePwdComponent } from './components/auth/change-pwd/change-pwd.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { GroupFormComponent } from './components/groups/group-form/group-form.component';
+import { GroupListComponent } from './components/groups/group-list/group-list.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
 import { UserListComponent } from './components/users/user-list/user-list.component';
 
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path:"users", component:UserListComponent},
   {path:"app/:mode/:id", component:AppFormComponent},
   {path:"apps", component:AppListComponent},
+  {path:"group/:mode/:id", component:GroupFormComponent},
+  {path:"groups", component:GroupListComponent},
 ];
 
 

@@ -36,6 +36,7 @@ import { Session } from './model/session.model';
 import { AuthModule } from './components/auth/auth.module';
 import { UsersModule } from './components/users/users.module';
 import { AppsModule } from './components/apps/apps.module';
+import { GroupsModule } from './components/groups/groups.module';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { AppsModule } from './components/apps/apps.module';
     AuthModule,
     UsersModule,
     AppsModule,
+    GroupsModule,
   ],
   providers: [Session, RestService, UserModel, GroupModel, AppFuncModel],
   bootstrap: [AppComponent]

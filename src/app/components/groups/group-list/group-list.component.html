@@ -1,0 +1,27 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center" class="admin-container">
+    <mat-card  fxFlex.xs="100%">        
+        <mat-card-content>
+            <table mat-table [dataSource]="groups" class="admin-table">
+                <!-- Group Id Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef i18n="@@code"> Code </th>
+                    <td mat-cell *matCellDef="let group"> {{group.id}} </td>
+                </ng-container>
+                <!-- Goup Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef i18n="@@group_name"> Goup Name </th>
+                    <td mat-cell *matCellDef="let group">
+                        <a href="#" [routerLink]="['/group/1', group.id]">{{group.name}}</a>
+                    </td>
+                </ng-container>       
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table> 
+    </mat-card-content>
+    <mat-card-footer>            
+        <button mat-fab color="accent"  [routerLink]="['/group/0', '-1']"  id="add-button"
+                matTooltip="Add New Group" i18n-matTooltip="@@add_group" name="matTooltip">
+                <mat-icon>add_circle_outline</mat-icon>
+        </button>  
+    </mat-card-footer>
+    </mat-card>
+</section>

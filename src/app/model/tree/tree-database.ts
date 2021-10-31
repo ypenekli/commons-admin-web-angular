@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { ITreeItem, TreeItemNode } from "./tree-item-node";
 
@@ -9,13 +9,14 @@ export class TreeDatabase<T>{
     data:TreeItemNode<T>;
 
     constructor(
-        public flatList:ITreeItem<T>[]){           
-            this.data = this.buildTreeNode(flatList, 0);
+        @Inject(TreeItemNode) private flatList:ITreeItem<T>[]){ 
+
+        this.data = this.buildTreeNode(flatList, 0);
         const data : TreeItemNode<T>[] =[this.data];
         this.dataChange.next(data);        
     }
 
-    buildTreeNode(list:ITreeItem<T>[], pI:number):TreeItemNode<T>{
+    buildTreeNode(list:ITreeItem<T>[], pI:number):TreeItemNode<T> | any{
         if(list != null && pI < list.length){
             let parent:ITreeItem<T> = list[pI];
             let parentNode : TreeItemNode<T> = new TreeItemNode(parent);
