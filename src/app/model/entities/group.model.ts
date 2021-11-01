@@ -1,13 +1,16 @@
 import { DataEntity } from 'src/service/entity.model';
 
 export class Group extends DataEntity{
+
+    public static typeName = "Group"  ; 
     private static schema_name:string='COMMON';
-    private static table_name:string='GROUPS';    
+    private static table_name:string='GROUPS'; 
+    
     
     constructor(id?:number){
         super();
         this.setPrimaryKeys('id');
-        this.className = Group.name;
+        this.className = "Group";
         if(id){
             this.set("id", id);
         }

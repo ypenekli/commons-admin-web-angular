@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +38,7 @@ import { UsersModule } from './components/users/users.module';
 import { AppsModule } from './components/apps/apps.module';
 import { GroupsModule } from './components/groups/groups.module';
 import { CommonsModule } from './components/commons/commons.module';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import {  MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [

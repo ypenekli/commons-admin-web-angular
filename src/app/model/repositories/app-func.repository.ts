@@ -11,6 +11,9 @@ import { Pager } from "src/service/pager.model";
 
 @Injectable()
 export class AppFuncModel implements OnInit{ 
+    static className(){        
+        return "AppFuncModel";
+    }
 
     private appFuncs:AppFunc[] = [];
     public result:Result<AppFunc>;  
@@ -27,9 +30,7 @@ export class AppFuncModel implements OnInit{
     }
 
     
-    static className(){        
-        return this.name;
-    }
+    
    
     ngOnInit(): void { }
 
@@ -40,9 +41,9 @@ export class AppFuncModel implements OnInit{
     findGroupAppFuncs(pGroupId:number, pAppId:string):Observable<boolean>{ 
         let appAd:FnParam =  new FnParam("appid", pAppId) ; 
         let groupId :FnParam = new FnParam("groupid", pGroupId) ;         
-        let fnName:string = this.findGroupAppFuncs.name;
+        let fnName:string = "findGroupAppFuncs";
         
-       return this.restService.getAny(AppFuncModel.className(), fnName, '-', AppFunc.name, null, appAd, groupId)         
+       return this.restService.getAny(AppFuncModel.className(), fnName, '-', (new AppFunc()).getClassName(), null, appAd, groupId)         
         .pipe(map(appFuncs => {
             this.appFuncs = new Array();
             if(appFuncs != null){               
@@ -54,8 +55,8 @@ export class AppFuncModel implements OnInit{
 
     findAppFuncs(pParentId:string):Observable<boolean>{          
         let parentId :FnParam = new FnParam("parentid", pParentId) ;         
-        let fnName:string = this.findAppFuncs.name;
-       return this.restService.getAny(AppFuncModel.className(), fnName, '-', AppFunc.name, null, parentId)         
+        let fnName:string = "findAppFuncs";
+       return this.restService.getAny(AppFuncModel.className(), fnName, '-', (new AppFunc()).getClassName(), null, parentId)         
         .pipe(map(appFuncs => {
             this.appFuncs = new Array();
             if(appFuncs != null){               
@@ -70,7 +71,7 @@ export class AppFuncModel implements OnInit{
         appFunc = RestService.setLastUserInfo(appFunc, user.email);  
         let isNew:boolean = appFunc.isNew(); 
 
-        return this.restService.post(AppFuncModel.className(), this.saveFunc.name, 
+        return this.restService.post(AppFuncModel.className(), "saveFunc", 
             new FnParam("app_func", appFunc), 
             new FnParam("group_id", groupId), 
             new FnParam("user", user) )      

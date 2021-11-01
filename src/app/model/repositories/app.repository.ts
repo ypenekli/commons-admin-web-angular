@@ -11,6 +11,10 @@ import { User } from "../entities/user.model";
 @Injectable()
 export class AppModel implements OnInit{ 
 
+    static className(){        
+        return "AppModel";
+    }
+
     private apps:App[]=[];    
     public result:Result<App>;  
     static targets:Reference<string>[] = [
@@ -21,12 +25,7 @@ export class AppModel implements OnInit{
 
     constructor(private restService:RestService<App>){
         this.result = new Result(false, '', new App("-1"), 0);
-    }
-
-    
-    static className(){        
-        return this.name;
-    }
+    }    
    
     ngOnInit(): void { }
 
@@ -49,8 +48,8 @@ export class AppModel implements OnInit{
     }
     findApps(pUserId:number):Observable<boolean>{ 
         let userId:FnParam =  new FnParam("user_id", pUserId) ;        
-        let fnName:string = this.findApps.name;
-       return this.restService.getAny(AppModel.className(), fnName, '-', App.name, null, userId)         
+        let fnName:string = "findApps";
+       return this.restService.getAny(AppModel.className(), fnName, '-', (new App()).getClassName(), null, userId)         
         .pipe(map(apps => {
             this.apps = new Array();
             if(apps != null){               
@@ -66,7 +65,7 @@ export class AppModel implements OnInit{
         app = RestService.setLastUserInfo(app, user.email);  
         let isNew:boolean = app.isNew();  
 
-        return this.restService.post(AppModel.className(), this.saveApp.name, 
+        return this.restService.post(AppModel.className(), "saveApp", 
             new FnParam("app", app), 
             new FnParam("user", user))      
         .pipe(map(res=>{       

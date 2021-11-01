@@ -53,7 +53,7 @@ export class UserFormComponent extends BaseForm implements OnInit {
       this.repository.save(this.user, this.session.getUser().email)
       .subscribe(message=>{
         this.messages = message;
-        this.snackBar.open(message, $localize`:@@save:`, {
+        this.snackBar.open(message, $localize`:@@save:Save`, {
           duration: 2000,
         });
       });    

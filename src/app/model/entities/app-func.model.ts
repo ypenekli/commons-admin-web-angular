@@ -8,7 +8,7 @@ export class AppFunc extends DataEntity implements ITreeItem<string>{
     constructor(id?:string){
         super();
         this.setPrimaryKeys('id');
-        this.className = AppFunc.name;
+        this.className = "AppFunc";
         if(id){
             this.set("id", id);
         }

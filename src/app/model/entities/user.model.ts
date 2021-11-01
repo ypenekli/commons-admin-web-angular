@@ -8,7 +8,7 @@ export class User extends DataEntity{
     constructor(userId?:number){
         super();
         this.setPrimaryKeys('id');
-        this.className = User.name;
+        this.className = "User";
         if(userId){
             this.set("id", userId);
         }

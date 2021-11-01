@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {PageEvent} from '@angular/material/paginator';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import { ActivatedRoute } from '@angular/router';
+import { tap } from 'rxjs/operators';
 import { Common } from 'src/app/model/entities/common.model';
 import { CommonModel } from 'src/app/model/repositories/common.repository';
 import { Session } from 'src/app/model/session.model';
@@ -10,7 +11,7 @@ import { Session } from 'src/app/model/session.model';
   templateUrl: './comm-code-list.component.html',
   styleUrls: ['./comm-code-list.component.css']
 })
-export class CommCodeListComponent implements OnInit {
+export class CommCodeListComponent implements OnInit, AfterViewInit {
   parent_id:number = 0;
   common: Common; 
 
@@ -21,6 +22,9 @@ export class CommCodeListComponent implements OnInit {
   pageIndex = 0;
   pageSizeOptions = [5, 10, 25];
   showFirstLastButtons = true;
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
   constructor(
     private session:Session,
@@ -42,6 +46,13 @@ export class CommCodeListComponent implements OnInit {
       //}
       this.common = new Common(-1);
      }
+  ngAfterViewInit(): void {
+    this.paginator.page
+        .pipe(
+            tap(() => this.commons)
+        )
+        .subscribe();
+  }
 
   ngOnInit(): void {
     this.repository.findByParent(this.parent_id)
@@ -50,6 +61,8 @@ export class CommCodeListComponent implements OnInit {
         this.common = this.commons[0];             
       }
     });
+
+   
   }
 
   get commons():Common[]{

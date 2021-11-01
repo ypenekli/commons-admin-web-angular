@@ -11,6 +11,11 @@ import { Pager } from "src/service/pager.model";
 @Injectable()
 export class CommonModel implements OnInit{ 
 
+    
+    static className(){        
+        return "CommonModel";
+    }
+
     public static  PARENT_ID_CITY_TR:number = 1020000000;
 	public static  PARENT_ID_PROFESSION:number = 1030000000;
 	public static  PARENT_ID_TITLE:number = 1040000000;
@@ -21,11 +26,6 @@ export class CommonModel implements OnInit{
 
     constructor(private restService:RestService<Common>){
         this.result = new Result(false, '', new Common(-1), 0);
-    }
-
-    
-    static className(){        
-        return this.name;
     }
    
     ngOnInit(): void { }
@@ -46,8 +46,8 @@ export class CommonModel implements OnInit{
 
     findByParent(pParentId:number):Observable<boolean>{ 
         let parentId:FnParam =  new FnParam("parent_id", pParentId) ;        
-        let fnName:string = this.findByParent.name;
-        return this.restService.getAny(CommonModel.className(), fnName, '-', Common.name, null, parentId) 
+        let fnName:string = "findByParent";
+        return this.restService.getAny(CommonModel.className(), fnName, '-', (new Common()).getClassName(), null, parentId) 
         .pipe(map(commons => { 
             this.commons = new Array();
             if(commons != null){                
@@ -63,7 +63,7 @@ export class CommonModel implements OnInit{
         console.log("common :" + common.get("abrv"));
         common = RestService.setLastUserInfo(common, user.email);         
         let isNew:boolean = common.isNew();         
-       return this.restService.post(CommonModel.className(),  this.saveCommon.name, 
+       return this.restService.post(CommonModel.className(),  "saveCommon", 
             new FnParam("common", common), 
             new FnParam("user", user))            
        .pipe(map(res=>{       

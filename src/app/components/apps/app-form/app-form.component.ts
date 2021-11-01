@@ -64,7 +64,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
     if(form.valid){    
       this.repository.saveApp(this.app, this.session.getUser())
       .subscribe(message=>{
-        this.snackBar.open(message, $localize`:@@save:`, {
+        this.snackBar.open(message, $localize`:@@save:Save`, {
           duration: 2000,
         });
       });    
@@ -76,7 +76,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
       this.appFuncRepository.saveFunc(this.appFunc, this.app.groupId, this.session.getUser())
       .subscribe(message=>{
         this.onGoUp();
-        this.snackBar.open(message, $localize`:@@save:`, {
+        this.snackBar.open(message, $localize`:@@save:Save`, {
           duration: 2000,
         });
       });    

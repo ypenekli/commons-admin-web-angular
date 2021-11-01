@@ -9,17 +9,17 @@ import { Pager } from 'src/service/pager.model';
 import { NullTemplateVisitor } from '@angular/compiler';
 
 @Injectable()
-export class UserModel implements OnInit{    
+export class UserModel implements OnInit{   
+    
+    static className(){        
+        return "UserModel";
+    } 
   
     private users:User[]=[];
     public result:Result<User> ;   
 
     constructor(private restService:RestService<User>){
         this.result = new Result(false, '', new User(-1), 0);
-    }
-    
-    static className(){        
-        return this.name;
     }
    
     ngOnInit(): void { }
@@ -48,8 +48,8 @@ export class UserModel implements OnInit{
         }else pName = "" ;
         let name :FnParam = new FnParam("name", pName)  
        
-        let fnName:string = this.findUsersByName.name;
-       return this.restService.getAny(UserModel.className(), fnName, '-', User.name, pager, name) 
+        let fnName:string = "findUsersByName";
+       return this.restService.getAny(UserModel.className(), fnName, '-', (new User()).getClassName(), pager, name) 
         .pipe(map(users=>{ 
            this.users = new Array();
            if(users != null){              
@@ -63,7 +63,7 @@ export class UserModel implements OnInit{
        // this.result = null;
        user = RestService.setLastUserInfo(user, userName);
        let isNew:boolean = user.isNew();      
-       let fnName:string = this.save.name;           
+       let fnName:string = "save";           
        return this.restService.postOne(UserModel.className(), fnName, user )      
        .pipe(map(res=>{       
         this.result = Result.fromPlain(res, new User()); 
@@ -83,7 +83,7 @@ export class UserModel implements OnInit{
     }
 
     authenticate(username: string, password: string):Observable<Result<User>>{
-        let type :FnParam = new FnParam("className", User.name);
+        let type :FnParam = new FnParam("className", (new User()).getClassName());
         let uname :FnParam = new FnParam("username", username);
         let upwd:FnParam = new FnParam("password", password);
         let appid:FnParam= new FnParam("appid", "0.1");
@@ -99,7 +99,7 @@ export class UserModel implements OnInit{
     }
 
     changePassword(pwdUser: User, newPassword: string, updateUser:User):Observable<Result<User>>{
-        let type :FnParam = new FnParam("className", User.name);
+        let type :FnParam = new FnParam("className",(new User()).getClassName());
         let pwduser :FnParam = new FnParam("pwduser", pwdUser);
         let upwd:FnParam = new FnParam("password", newPassword);
         let updateuser :FnParam = new FnParam("updateuser", updateUser);

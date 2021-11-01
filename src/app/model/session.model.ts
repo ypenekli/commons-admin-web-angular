@@ -109,13 +109,13 @@ export class Session implements OnInit{
           let home:AppFunc = new AppFunc();
           home.id = "0.98";
           home.parentId = "0.1";
-          home.name = "HESABIM";
+          home.name =  $localize`:@@account:ACCOUNT`;
           home.level = 2;
    
           let sec:AppFunc = new AppFunc();
           sec.id = "0.99";
           sec.parentId = "0.98";
-          sec.name = "Şifre Değiştir";
+          sec.name = $localize`:@@change_password:Change Password`;
           sec.url = ".ChangePassword"
           sec.level = 3;
    

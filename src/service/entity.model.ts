@@ -1,7 +1,7 @@
 import { formatDate, Time } from "@angular/common";
 
 export class Element{
-    
+
     private typeName:string;
     private readOnly:boolean;
     private _value:any;
@@ -74,6 +74,7 @@ export abstract class DataEntity{
     private state:number = DataEntity.INSERTED;    
     private fields:Map<string, Element> = new Map<string, Element>();
     private primaryKeys:Map<string, Element> = new Map<string, Element>();   
+    
     
     constructor(payload?:Partial<any>){
         if(payload != null){          

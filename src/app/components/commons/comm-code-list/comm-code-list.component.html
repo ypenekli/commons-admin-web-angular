@@ -30,8 +30,8 @@
                     </td>
                 </ng-container> 
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-                <mat-paginator
+            </table> 
+            <mat-paginator
                     (page)="handlePageEvent($event)"
                     [length]="length"
                     [pageSize]="pageSize"
@@ -40,7 +40,6 @@
                     [pageIndex]="pageIndex"
                     aria-label="Select page">
                 </mat-paginator>
-            </table> 
     </mat-card-content>
     <mat-card-footer>            
         <button mat-fab color="accent"  [routerLink]="['/common/0', '-1']"  id="add-button"

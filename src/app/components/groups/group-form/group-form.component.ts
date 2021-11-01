@@ -68,7 +68,7 @@ export class GroupFormComponent extends BaseForm implements OnInit {
   save(form: NgForm) {   
     this.repository.saveGroup(this.group, this.session.getUser())
     .subscribe(message=>{
-      this.snackBar.open(message, $localize`:@@save:`, {
+      this.snackBar.open(message, $localize`:@@save:Save`, {
         duration: 2000,
         });
       });    

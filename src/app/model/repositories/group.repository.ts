@@ -8,18 +8,18 @@ import { Group } from "../entities/group.model";
 import { User } from "../entities/user.model";
 
 @Injectable()
-export class GroupModel implements OnInit{ 
+export class GroupModel implements OnInit{
+
+    
+    static className(){        
+        return "GroupModel";
+    } 
 
     private groups:Group[] = [];
     public result:Result<Group>;  
 
     constructor(private restService:RestService<Group>){
         this.result = new Result(false, '', new Group(-1), 0);
-    }
-
-    
-    static className(){        
-        return this.name;
     }
    
     ngOnInit(): void { }
@@ -41,8 +41,8 @@ export class GroupModel implements OnInit{
     findUserGroupList(pUserId:number):Observable<boolean>{        
         let userId :FnParam = new FnParam("userid", pUserId) ; 
        
-        let fnName:string = this.findUserGroupList.name;
-        return this.restService.getAny(GroupModel.className(), fnName, '-', Group.name, null, userId) 
+        let fnName:string = "findUserGroupList";
+        return this.restService.getAny(GroupModel.className(), fnName, '-', (new Group()).getClassName(), null, userId) 
         .pipe(map(groups => { 
             this.groups = new Array();
             if(groups != null){               
@@ -57,8 +57,8 @@ export class GroupModel implements OnInit{
         let appAd:FnParam =  new FnParam("appid", pAppId) ;         
         let userId :FnParam = new FnParam("userid", pUserId) ; 
        
-        let fnName:string = this.findAppGroupList.name;
-        return this.restService.getAny(GroupModel.className(), fnName, '-', Group.name, null, appAd, userId) 
+        let fnName:string = "findAppGroupList";
+        return this.restService.getAny(GroupModel.className(), fnName, '-', (new Group()).getClassName(), null, appAd, userId) 
         .pipe(map(groups => { 
             this.groups = new Array();
             if(groups != null){               
@@ -73,7 +73,7 @@ export class GroupModel implements OnInit{
         //this.result = null;
         group = RestService.setLastUserInfo(group, user.email);   
         let isNew:boolean = group.isNew();         
-       return this.restService.post(GroupModel.className(),  this.saveGroup.name, 
+       return this.restService.post(GroupModel.className(),  "saveGroup", 
             new FnParam("group", group), 
             new FnParam("user", user))            
        .pipe(map(res=>{       

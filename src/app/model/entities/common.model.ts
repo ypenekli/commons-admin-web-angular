@@ -7,7 +7,7 @@ export class Common extends DataEntity{
     constructor(id?:number){
         super();
         this.setPrimaryKeys('id');
-        this.className = Common.name;
+        this.className = "Common";
         if(id){
             this.set("id", id);
         }

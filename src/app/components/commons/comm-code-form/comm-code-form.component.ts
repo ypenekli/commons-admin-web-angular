@@ -45,7 +45,7 @@ export class CommCodeFormComponent extends BaseForm implements OnInit {
       this.repository.saveCommon(this.common, this.session.getUser())
       .subscribe(message=>{
         this.messages = message;
-        this.snackBar.open(message, $localize`:@@save:`, {
+        this.snackBar.open(message, $localize`:@@save:Save`, {
           duration: 2000,
         });
       });    

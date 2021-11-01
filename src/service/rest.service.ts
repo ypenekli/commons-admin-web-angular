@@ -38,7 +38,8 @@ export class RestService<T> implements OnInit{
         url = `${this.baseUrl}${callerClassName}/${fnName}@${queryName}/`;
       }else{
         url = `${this.baseUrl}${callerClassName}/${fnName}/`;
-      }     
+      } 
+      console.log("url :" + url);
       return url;      
     }    
 

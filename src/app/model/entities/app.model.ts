@@ -7,7 +7,7 @@ export class App extends DataEntity{
     constructor(id?:string){
         super();
         this.setPrimaryKeys('id');
-        this.className = App.name;
+        this.className = "App";
         if(id){
             this.set("id", id);
         }

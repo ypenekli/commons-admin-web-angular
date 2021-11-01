@@ -19,7 +19,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';;
 import { CommCodeFormComponent } from './comm-code-form/comm-code-form.component';
 import { CommCodeListComponent } from './comm-code-list/comm-code-list.component';
 import { CommonModel } from 'src/app/model/repositories/common.repository';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule  } from '@angular/material/paginator';
 
 
 
