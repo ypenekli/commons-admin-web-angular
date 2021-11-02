@@ -4,7 +4,6 @@ import { Common } from 'src/app/model/entities/common.model';
 import { Group } from 'src/app/model/entities/group.model';
 import { User } from 'src/app/model/entities/user.model';
 import { DataEntity } from './entity.model';
-import { Pager } from './pager.model';
 
 export class Result<T>{
     constructor(

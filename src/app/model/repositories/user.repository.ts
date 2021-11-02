@@ -6,7 +6,6 @@ import { Observable, of} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FnParam } from 'src/service/fn-param.model';
 import { Pager } from 'src/service/pager.model';
-import { NullTemplateVisitor } from '@angular/compiler';
 
 @Injectable()
 export class UserModel implements OnInit{   

@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { Common } from 'src/app/model/entities/common.model';
 import { CommonModel } from 'src/app/model/repositories/common.repository';
 import { Session } from 'src/app/model/session.model';
+import { Pager } from 'src/service/pager.model';
 
 @Component({
   selector: 'app-comm-code-list',
@@ -14,6 +15,8 @@ import { Session } from 'src/app/model/session.model';
 export class CommCodeListComponent implements OnInit, AfterViewInit {
   parent_id:number = 0;
   common: Common; 
+
+  private pager:Pager;
 
   displayedColumns: string[] = ['abrv', 'id', 'name'];
 
@@ -31,6 +34,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     private repository:CommonModel,
     private aRoute: ActivatedRoute) {
 
+      this.pager = new Pager(0, this.pageSize, this.length);
       aRoute.params.subscribe(params => {
           this.parent_id = params['parent_id']; 
           if(this.parent_id == null){
@@ -38,12 +42,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
           }
           
         }
-      )
-
-      //this.parent_id = aRoute.snapshot.params['parent_id'];       
-      //if(this.parent_id == null){
-      //  this.parent_id = 0;
-      //}
+      )    
       this.common = new Common(-1);
      }
   ngAfterViewInit(): void {
@@ -55,14 +54,16 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.repository.findByParent(this.parent_id)
+    this.findCommons();
+  }
+
+  private findCommons():void{
+    this.repository.findByParent(this.parent_id, this.pager)
     .subscribe(res=>{
       if(this.commons.length > 0){
         this.common = this.commons[0];             
       }
     });
-
-   
   }
 
   get commons():Common[]{
@@ -73,5 +74,12 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     this.length = event.length;
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
+    this.findCommons();
+    console.log("length :" + this.length);
+    console.log("page size :" + this.pageSize);
+    console.log("pageIndex :" + this.pageIndex);
+
+    this.pager.setOffset(this.pageSize + this.pageIndex);
+    
   }
 }

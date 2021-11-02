@@ -7,7 +7,6 @@ import { Result } from "src/service/result.model";
 import { AppFunc } from "../entities/app-func.model";
 import { Reference } from "src/service/reference.model";
 import { User } from "../entities/user.model";
-import { Pager } from "src/service/pager.model";
 
 @Injectable()
 export class AppFuncModel implements OnInit{ 
