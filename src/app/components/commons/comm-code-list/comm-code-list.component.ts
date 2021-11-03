@@ -16,13 +16,13 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   parent_id:number = 0;
   common: Common; 
 
-  private pager:Pager;
+  pager:Pager;
 
   displayedColumns: string[] = ['abrv', 'id', 'name'];
 
-  length = 500;
-  pageSize = 10;
-  pageIndex = 0;
+ // length = 500;
+ // pageSize = 10;
+ // pageIndex = 0;
   pageSizeOptions = [5, 10, 25];
   showFirstLastButtons = true;
 
@@ -34,7 +34,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     private repository:CommonModel,
     private aRoute: ActivatedRoute) {
 
-      this.pager = new Pager(0, this.pageSize, this.length);
+      this.pager = new Pager(0, 10, 500);
       aRoute.params.subscribe(params => {
           this.parent_id = params['parent_id']; 
           if(this.parent_id == null){
@@ -71,15 +71,15 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   }  
 
   handlePageEvent(event: PageEvent) {
-    this.length = event.length;
-    this.pageSize = event.pageSize;
-    this.pageIndex = event.pageIndex;
+    let length = event.length;
+    let pageSize = event.pageSize;
+    let pageIndex = event.pageIndex;
     this.findCommons();
-    console.log("length :" + this.length);
-    console.log("page size :" + this.pageSize);
-    console.log("pageIndex :" + this.pageIndex);
+    console.log("length :" + length);
+    console.log("page size :" + pageSize);
+    console.log("pageIndex :" + pageIndex);
 
-    this.pager.setOffset(this.pageSize + this.pageIndex);
+    this.pager.setPageIndex(pageIndex);
     
   }
 }

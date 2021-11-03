@@ -63,6 +63,7 @@ export class RestService<T> implements OnInit{
         pParams.unshift(type);
 
       };
+      //console.log("param :" + JSON.stringify(pParams));
       const params : HttpParams = new HttpParams()        
             .set('params', JSON.stringify(pParams)) ;
      

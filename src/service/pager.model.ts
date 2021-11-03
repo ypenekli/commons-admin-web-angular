@@ -1,28 +1,28 @@
 
 export class Pager {
-   
+
     constructor(
-        private offset: number = 0,
-        private limit: number = -1,
-        private count: number = -1
+        private pageIndex: number = 0,
+        private pageSize: number = -1,
+        private length: number = -1
     ) {}
 
-    public getOffset():number{
-        return this.offset;
+    public getPageIndex():number{
+        return this.pageIndex;
     }
-    setOffset(value:number){
-        this.offset = value;
+    setPageIndex(value:number){
+        this.pageIndex = value;
     }
-    public getLimit():number{
-        return this.limit;
+    public getPageSize():number{
+        return this.pageSize;
     }  
-    setLimit(value:number){
-        this.limit = value;
+    setPageSize(value:number){
+        this.pageSize = value;
     }  
-    public getCount():number{
-        return this.count;
+    public getLength():number{
+        return this.length;
     }
-    setCount(value:number){
-        this.count = value;
+    setLength(value:number){
+        this.length = value;
     }
 }
