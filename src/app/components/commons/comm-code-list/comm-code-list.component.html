@@ -31,7 +31,7 @@
                 </ng-container> 
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table> 
-            <mat-paginator
+            <mat-paginator class="admin-mat-paginator"
                     (page)="handlePageEvent($event)"
                     [length]="pager.getLength()"
                     [pageSize]="pager.getPageSize()"
@@ -39,13 +39,15 @@
                     [pageSizeOptions]="pageSizeOptions"
                     [pageIndex]="pager.getPageIndex()"
                     aria-label="Select page">
-                </mat-paginator>
+            </mat-paginator>
     </mat-card-content>
-    <mat-card-footer>            
+    <mat-card-footer>
+    </mat-card-footer>
+    </mat-card>
+    <div >            
         <button mat-fab color="accent"  [routerLink]="['/common/0', '-1']"  id="add-button"
                 matTooltip="Add New Common Code" i18n-matTooltip="@@add_common" name="matTooltip">
                 <mat-icon>add_circle_outline</mat-icon>
         </button>  
-    </mat-card-footer>
-    </mat-card>
+    </div>
 </section>

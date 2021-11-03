@@ -53,12 +53,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .admin-form-header-table tbody td{
     text-align: left;
 }
+.admin-mat-paginator {
+    display: flex;
+    justify-content: left;
+}
 .spacer{
     flex:1 1 auto;
 }
 #add-button{
-    right: 40px;
-    bottom: 10px;
-    left: auto;
-    position: absolute;
+    top: auto !important;
+    right: 40px !important;
+    bottom: 10px !important;
+    left: auto !important;
+    position: fixed !important;
 }

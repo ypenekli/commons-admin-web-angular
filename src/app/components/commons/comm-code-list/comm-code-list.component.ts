@@ -74,12 +74,14 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     let length = event.length;
     let pageSize = event.pageSize;
     let pageIndex = event.pageIndex;
-    this.findCommons();
+   
     console.log("length :" + length);
     console.log("page size :" + pageSize);
     console.log("pageIndex :" + pageIndex);
 
     this.pager.setPageIndex(pageIndex);
+    this.pager.setPageSize(pageSize);
+    this.findCommons();
     
   }
 }
