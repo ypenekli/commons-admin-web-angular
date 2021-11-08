@@ -44,18 +44,26 @@ export class CommonModel implements OnInit{
         return new Common(-1);
     }
 
-    findByParent(pParentId:number, pPager:Pager | null):Observable<boolean>{ 
+    findByParent(pParentId:number, pPager:Pager | null):Observable<Pager>{ 
         let parentId:FnParam =  new FnParam("parent_id", pParentId) ;        
         let fnName:string = "findByParent";
-        return this.restService.getAny(CommonModel.className(), fnName, '-', (new Common()).getClassName(), pPager, parentId) 
-        .pipe(map(commons => { 
+        let common = new Common();
+        let pager:Pager;
+        if(pPager){
+            pager = pPager;
+        }else{
+            pager = new Pager();
+        }
+        return this.restService.getAnyPage(CommonModel.className(), fnName, '-', common.getClassName(), pager, parentId) 
+        .pipe(map(res => { 
+            let result = Result.fromPlain(res, common);
             this.commons = new Array();
-            if(commons != null){                
-                this.commons = commons.map(partial=>Common.fromPlain(partial));             
+            if (result != null) {
+                this.commons = result.getData();
+                pager.setLength(result.getDataLength());
             }
-         return true;
-       }));     
-
+            return pager;
+       }));        
     } 
 
     saveCommon(common: Common, user:User):Observable<string> {
