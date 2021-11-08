@@ -3,15 +3,19 @@ import { DataEntity } from 'src/service/entity.model';
 
 export class User extends DataEntity{
     private static schema_name:string='COMMON';
-    private static table_name:string='USERS';    
+    private static table_name:string='USERS'; 
     
-    constructor(userId?:number){
+    constructor(id?:number){
         super();
         this.setPrimaryKeys('id');
         this.className = "User";
-        if(userId){
-            this.set("id", userId);
+        if(id){
+            this.set("id", id);
         }
+    }
+    
+    public newInstance(payload:Partial<any>):User{
+        return DataEntity.fromPlain(payload, new User());
     }
     
     public  get schemaName(): string {

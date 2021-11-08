@@ -6,7 +6,6 @@ export class Group extends DataEntity{
     private static schema_name:string='COMMON';
     private static table_name:string='GROUPS'; 
     
-    
     constructor(id?:number){
         super();
         this.setPrimaryKeys('id');
@@ -14,6 +13,10 @@ export class Group extends DataEntity{
         if(id){
             this.set("id", id);
         }
+    }
+    
+    public newInstance(payload:Partial<any>):Group{
+        return DataEntity.fromPlain(payload, new Group());
     }
     
     public  get schemaName(): string {

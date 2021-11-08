@@ -1,4 +1,4 @@
-import { formatDate, Time } from "@angular/common";
+import { formatDate, NgClass, Time } from "@angular/common";
 
 export class Element{
 
@@ -100,7 +100,8 @@ export abstract class DataEntity{
             }  
         }
     }
-
+    
+    public abstract newInstance(payload:Partial<any>):DataEntity
     public abstract  get schemaName(): string ;
     public abstract  get tableName(): string;   
     
@@ -302,5 +303,5 @@ export abstract class DataEntity{
             target.accept();
         }
         return target;
-    }    
+    } 
 }

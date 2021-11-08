@@ -27,9 +27,6 @@ export class AppFuncModel implements OnInit{
     constructor(private restService:RestService<AppFunc>){
         this.result = new Result(false, '', new AppFunc("-1"), 0);
     }
-
-    
-    
    
     ngOnInit(): void { }
 
@@ -42,7 +39,7 @@ export class AppFuncModel implements OnInit{
         let groupId :FnParam = new FnParam("groupid", pGroupId) ;         
         let fnName:string = "findGroupAppFuncs";
         
-       return this.restService.getAny(AppFuncModel.className(), fnName, '-', (new AppFunc()).getClassName(), null, appAd, groupId)         
+       return this.restService.getAny(AppFuncModel.className(), fnName, '-', (new AppFunc()).getClassName(), appAd, groupId)         
         .pipe(map(appFuncs => {
             this.appFuncs = new Array();
             if(appFuncs != null){               
@@ -55,7 +52,7 @@ export class AppFuncModel implements OnInit{
     findAppFuncs(pParentId:string):Observable<boolean>{          
         let parentId :FnParam = new FnParam("parentid", pParentId) ;         
         let fnName:string = "findAppFuncs";
-       return this.restService.getAny(AppFuncModel.className(), fnName, '-', (new AppFunc()).getClassName(), null, parentId)         
+       return this.restService.getAny(AppFuncModel.className(), fnName, '-', (new AppFunc()).getClassName(), parentId)         
         .pipe(map(appFuncs => {
             this.appFuncs = new Array();
             if(appFuncs != null){               

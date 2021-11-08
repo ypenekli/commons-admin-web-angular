@@ -42,7 +42,7 @@ export class GroupModel implements OnInit{
         let userId :FnParam = new FnParam("userid", pUserId) ; 
        
         let fnName:string = "findUserGroupList";
-        return this.restService.getAny(GroupModel.className(), fnName, '-', (new Group()).getClassName(), null, userId) 
+        return this.restService.getAny(GroupModel.className(), fnName, '-', (new Group()).getClassName(), userId) 
         .pipe(map(groups => { 
             this.groups = new Array();
             if(groups != null){               
@@ -58,7 +58,7 @@ export class GroupModel implements OnInit{
         let userId :FnParam = new FnParam("userid", pUserId) ; 
        
         let fnName:string = "findAppGroupList";
-        return this.restService.getAny(GroupModel.className(), fnName, '-', (new Group()).getClassName(), null, appAd, userId) 
+        return this.restService.getAny(GroupModel.className(), fnName, '-', (new Group()).getClassName(), appAd, userId) 
         .pipe(map(groups => { 
             this.groups = new Array();
             if(groups != null){               

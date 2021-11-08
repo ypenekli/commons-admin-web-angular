@@ -47,7 +47,7 @@ export class RestService<T> implements OnInit {
     return new type();
   }
 
-  getAnyPage(callerClassName: string, fnName: string, queryName: string, className: string,
+  getPageAny(callerClassName: string, fnName: string, queryName: string, className: string,
     pPager: Pager | null, ...pParams: FnParam[]): Observable<Result<T[]>> {
     const url: string = this.getHttpConnection(callerClassName, fnName, queryName);
     if (pPager == null) {
@@ -75,13 +75,10 @@ export class RestService<T> implements OnInit {
       );
   }
   getAny(callerClassName: string, fnName: string, queryName: string, className: string,
-    pPager: Pager | null, ...pParams: FnParam[]): Observable<T[]> {
-    const url: string = this.getHttpConnection(callerClassName, fnName, queryName);
-    if (pPager == null) {
-      pPager = new Pager();
-    }
+    ...pParams: FnParam[]): Observable<T[]> {
+    const url: string = this.getHttpConnection(callerClassName, fnName, queryName);   
     let type: FnParam = new FnParam("type", className);
-    let pager: FnParam = new FnParam("pager", pPager);
+    let pager: FnParam = new FnParam("pager", new Pager());
     if (pParams === null) {
       pParams = [type, pager];
     } else {

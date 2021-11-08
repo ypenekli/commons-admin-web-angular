@@ -23,6 +23,10 @@ export class Reference<T> extends DataEntity{
         this.set(this.valueFieldName, value, false);
         
     }
+    
+    public newInstance(payload:Partial<any>):Reference<T>{
+        return DataEntity.fromPlain(payload, new Reference(this.key, this.value, this.keyFieldName, this.valueFieldName));
+    }
 
     get key():T{
         return this.get(this.keyFieldName);

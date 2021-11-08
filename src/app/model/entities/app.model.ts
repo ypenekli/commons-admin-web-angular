@@ -2,7 +2,7 @@ import { DataEntity } from 'src/service/entity.model';
 
 export class App extends DataEntity{
     private static schema_name:string='COMMON';
-    private static table_name:string='APPS';    
+    private static table_name:string='APPS';  
     
     constructor(id?:string){
         super();
@@ -13,6 +13,10 @@ export class App extends DataEntity{
         }
     }
     
+    public newInstance(payload:Partial<any>):App{
+        return DataEntity.fromPlain(payload, new App());
+    }
+
     public  get schemaName(): string {
         return App.schema_name;
     } 

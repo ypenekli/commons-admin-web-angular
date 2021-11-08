@@ -26,7 +26,7 @@ export class UserListComponent implements OnInit {
   }
 
   findUsersByName(value:string){
-    let pager:Pager = new Pager(0, 250);
+    let pager:Pager = new Pager();
     this.userModel.findUsersByName(value, pager)
     .subscribe(res=>{
       let users:User[] = this.userModel.getUsers();

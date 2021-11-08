@@ -2,27 +2,30 @@
 export class Pager {
 
     constructor(
-        private pageIndex: number = 0,
-        private pageSize: number = -1,
-        private length: number = -1
-    ) {}
+        private pageSize: number = 10,
+        private length: number = -1,
+        private pageIndex: number = 0
+    ) { }
 
-    public getPageIndex():number{
+    public getPageIndex(): number {
         return this.pageIndex;
     }
-    setPageIndex(value:number){
+    setPageIndex(value: number) {
         this.pageIndex = value;
     }
-    public getPageSize():number{
+    public getPageSize(): number {
         return this.pageSize;
-    }  
-    setPageSize(value:number){
+    }
+    setPageSize(value: number) {
         this.pageSize = value;
-    }  
-    public getLength():number{
+    }
+    public getLength(): number {
         return this.length;
     }
-    setLength(value:number){
+    setLength(value: number) {
         this.length = value;
+        if (value < this.pageSize) {
+            this.pageSize = value;
+        }
     }
 }

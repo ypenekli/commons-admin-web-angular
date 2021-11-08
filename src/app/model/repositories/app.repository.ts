@@ -49,7 +49,7 @@ export class AppModel implements OnInit{
     findApps(pUserId:number):Observable<boolean>{ 
         let userId:FnParam =  new FnParam("user_id", pUserId) ;        
         let fnName:string = "findApps";
-       return this.restService.getAny(AppModel.className(), fnName, '-', (new App()).getClassName(), null, userId)         
+       return this.restService.getAny(AppModel.className(), fnName, '-', (new App()).getClassName(), userId)         
         .pipe(map(apps => {
             this.apps = new Array();
             if(apps != null){               

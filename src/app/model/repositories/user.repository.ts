@@ -48,7 +48,7 @@ export class UserModel implements OnInit {
         let name: FnParam = new FnParam("name", pName);
         let fnName: string = "findUsersByName";
         let user = new User();
-        return this.restService.getAnyPage(UserModel.className(), fnName, '-', user.getClassName(), pager, name)
+        return this.restService.getPageAny(UserModel.className(), fnName, '-', user.getClassName(), pager, name)
             .pipe(map(res => {
                 let result = Result.fromPlain(res, user);
                 this.users = new Array();

@@ -56,11 +56,11 @@ export class Result<T>{
         if (Array.isArray(data)) {
             let list = new Array();
             data.forEach(e => {
-                list.push(DataEntity.fromPlain(e, target));
+                list.push(target.newInstance(e));
             });
             result.setData(list);
         } else {
-            result.data = DataEntity.fromPlain(data, target);
+            result.data = target.newInstance(data);
         }
         result.errorCode = payload['errorCode'];
         result.dataLength = payload['dataLength'];

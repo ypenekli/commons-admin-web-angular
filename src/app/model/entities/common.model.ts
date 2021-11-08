@@ -13,6 +13,10 @@ export class Common extends DataEntity{
         }
     }
     
+    public newInstance(payload:Partial<any>):Common{
+        return DataEntity.fromPlain(payload, new Common());
+    }
+    
     public  get schemaName(): string {
         return Common.schema_name;
     } 
