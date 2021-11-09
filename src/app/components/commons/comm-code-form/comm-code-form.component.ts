@@ -15,6 +15,7 @@ import { Result } from 'src/service/result.model';
 })
 export class CommCodeFormComponent extends BaseForm implements OnInit {   
   id:number = -1;
+  parentId:number = 0;
   common: Common = new Common(-1);   
 
   constructor(
@@ -25,6 +26,7 @@ export class CommCodeFormComponent extends BaseForm implements OnInit {
     private snackBar:MatSnackBar) {
       super(aRoute);        
       this.id = aRoute.snapshot.params['id'];  
+      this.parentId = aRoute.snapshot.params['parent_id']; 
     }
 
   ngOnInit(): void {

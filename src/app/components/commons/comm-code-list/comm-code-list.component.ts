@@ -13,7 +13,7 @@ import { Pager } from 'src/service/pager.model';
   styleUrls: ['./comm-code-list.component.css']
 })
 export class CommCodeListComponent implements OnInit, AfterViewInit {
-  parent_id: number = 0;
+  parentId: number = 0;
   common: Common;
 
   pager: Pager;
@@ -32,9 +32,9 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
 
     this.pager = new Pager();
     aRoute.params.subscribe(params => {
-      this.parent_id = params['parent_id'];
-      if (this.parent_id == null) {
-        this.parent_id = 0;
+      this.parentId = params['parent_id'];
+      if (this.parentId == null) {
+        this.parentId = 0;
       }
 
     }
@@ -54,7 +54,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   }
 
   private findCommons(): void {
-    this.repository.findByParent(this.parent_id, this.pager)
+    this.repository.findByParent(this.parentId, this.pager)
       .subscribe(res => {
         if (this.commons.length > 0) {
           this.common = this.commons[0];

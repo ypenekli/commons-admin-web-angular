@@ -28,4 +28,9 @@ export class Pager {
             this.pageSize = value;
         }
     }
+    public reset(pageSize:number){
+        this.pageSize = pageSize;
+        this.length = -1;
+        this.pageIndex = 0;
+    }
 }

@@ -24,7 +24,8 @@ const routes: Routes = [
   {path:"commons", component:CommCodeListComponent},
   {path:"commons/:parent_id", component:CommCodeListComponent},
   {path:"commons2/:parent_id", component:CommCodeListComponent},
-  {path:"common/:mode/:id", component:CommCodeFormComponent},
+  {path:"commons3/:parent_id", component:CommCodeListComponent},
+  {path:"common/:mode/:id/:parent_id", component:CommCodeFormComponent},
 ];
 
 
