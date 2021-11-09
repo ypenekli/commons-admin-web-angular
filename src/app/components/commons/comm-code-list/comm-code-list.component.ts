@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
@@ -72,5 +72,21 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     this.pager.setPageSize(event.pageSize);
     this.pager.setLength(event.length);
     this.findCommons();
+  }
+
+
+
+  toggleSearch: boolean = false;
+  @ViewChild('searchbar') searchbar: ElementRef | undefined;
+  searchText = '';
+
+  openSearch() {
+    this.toggleSearch = true;
+    if(this.searchbar)
+    this.searchbar.nativeElement.focus();
+  }
+  searchClose() {
+    this.searchText = '';
+    this.toggleSearch = false;
   }
 }
