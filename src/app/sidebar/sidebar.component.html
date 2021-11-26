@@ -31,7 +31,11 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <div>{{funcName}}</div>
+      <div style="padding:8px 0 0 10px; flex:1;">{{funcName}}</div>
+
+      <button mat-icon-button *ngIf="isSearchShown" (click)="openSearch()">
+        <mat-icon>search</mat-icon>
+    </button>
     </mat-toolbar>
     <div class="container"> 
       <router-outlet></router-outlet>     

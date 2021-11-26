@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -6,25 +6,28 @@ import { Session } from 'src/app/model/session.model';
 import { User } from 'src/app/model/entities/user.model';
 import { Group } from 'src/app/model/entities/group.model';
 import { AppFunc } from 'src/app/model/entities/app-func.model';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { SearchEvent } from '../model/search-event';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent {  
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
-
+ 
   constructor(
     private session:Session,
     private router:Router,
-    private breakpointObserver: BreakpointObserver) {}
+    private breakpointObserver: BreakpointObserver,
+    private toolbarSearch:SearchEvent
+    ) {}
 
     get user():User{
       return this.session.getUser();
@@ -38,6 +41,10 @@ export class SidebarComponent {
       return this.session.getMenu();
     }
   
+    get isSearchShown():boolean{
+      return this.session.isSearchShown;
+    }
+    
     getMenuSubList(parentId:string):AppFunc[]{
       return this.session.getMenuSubList(parentId);
     }
@@ -85,5 +92,9 @@ export class SidebarComponent {
         window.location.reload(); 
       }
       );   
+    }
+    
+    openSearch() {
+       this.toolbarSearch.callEvent("openSearch");    
     }
   }

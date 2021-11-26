@@ -6,6 +6,7 @@ import { User } from "./entities/user.model";
 
 @Injectable()
 export class Session implements OnInit{ 
+  public isSearchShown: boolean;
   private appId:string="";
   private appName:string="";
   private funcName:string="";
@@ -15,6 +16,7 @@ export class Session implements OnInit{
   private rootMenuList:Group[];
   private menuList:AppFunc[];
   private menu:AppFunc[];
+  
 
     constructor(){
       this.appId = "0.1";
@@ -25,6 +27,7 @@ export class Session implements OnInit{
       this.menu = [];
       this.setAppName($localize`:AppName@@@@app_name:APP/USER MANAGEMENT`);
       this.setMenuList([]); 
+      this.isSearchShown = false;
     }
 
    
@@ -151,5 +154,6 @@ export class Session implements OnInit{
       this.menuList = [];
       this.menu = [];
       this.rootMenuList = [];
+      this.isSearchShown = false;
     }    
 }

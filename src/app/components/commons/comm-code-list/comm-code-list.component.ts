@@ -4,13 +4,14 @@ import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { Common } from 'src/app/model/entities/common.model';
 import { CommonModel } from 'src/app/model/repositories/common.repository';
+import { SearchEvent } from 'src/app/model/search-event';
 import { Session } from 'src/app/model/session.model';
 import { Pager } from 'src/service/pager.model';
 
 @Component({
   selector: 'app-comm-code-list',
   templateUrl: './comm-code-list.component.html',
-  styleUrls: ['./comm-code-list.component.css']
+  styleUrls: ['./comm-code-list.component.scss', './comm-code-list.component.css']
 })
 export class CommCodeListComponent implements OnInit, AfterViewInit {
   parentId: number = 0;
@@ -28,8 +29,9 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   constructor(
     private session: Session,
     private repository: CommonModel,
-    private aRoute: ActivatedRoute) {
-
+    private aRoute: ActivatedRoute,
+    private toolbarSearch:SearchEvent) {
+   
     this.pager = new Pager();
     aRoute.params.subscribe(params => {
       this.parentId = params['parent_id'];
@@ -40,6 +42,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     }
     )
     this.common = new Common(-1);
+    this.toolbarSearch.addListener("openSearch", this.openSearch.bind(this));
   }
   ngAfterViewInit(): void {
     this.paginator.page
@@ -88,5 +91,6 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   searchClose() {
     this.searchText = '';
     this.toggleSearch = false;
+    console.log("close search");
   }
 }

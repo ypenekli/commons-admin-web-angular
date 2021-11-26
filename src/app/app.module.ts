@@ -39,6 +39,7 @@ import { AppsModule } from './components/apps/apps.module';
 import { GroupsModule } from './components/groups/groups.module';
 import { CommonsModule } from './components/commons/commons.module';
 import {  MatPaginatorModule } from '@angular/material/paginator';
+import { SearchEvent } from './model/search-event';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,7 @@ import {  MatPaginatorModule } from '@angular/material/paginator';
     GroupsModule,    
     CommonsModule
   ],
-  providers: [Session, RestService, UserModel, GroupModel, AppFuncModel],
+  providers: [Session, RestService, SearchEvent, UserModel, GroupModel, AppFuncModel],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

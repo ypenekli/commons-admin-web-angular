@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/entities/user.model';
-import { MustMatch } from 'src/app/model/MustMatch';
+import { MustMatch } from 'src/app/model/must-match';
 import { UserModel } from 'src/app/model/repositories/user.repository';
 import { Session } from 'src/app/model/session.model';
 
