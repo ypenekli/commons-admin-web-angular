@@ -69,6 +69,36 @@ export class CommonModel implements OnInit {
             }));
     }
 
+    findByName(pParentId: number, pName:string, pPager: Pager | null): Observable<Pager> {
+        if (!!pName) {
+            pName = "%" + pName + "%";
+        } else pName = "";
+        let name: FnParam = new FnParam("name", pName);
+        let parentId: FnParam = new FnParam("parent_id", pParentId);
+        let fnName: string = "findByName";
+        let common = new Common();
+        let pager: Pager;
+        if (pPager) {
+            pager = pPager;
+        } else {
+            pager = new Pager();
+        }
+
+        return this.restService.getPageAny(CommonModel.className(), fnName, '-', common.getClassName(), pager, parentId, name)
+            .pipe(map(res => {
+                let result = Result.fromPlain(res, common);
+                this.commons = new Array();
+                if (result != null) {
+                    this.commons = result.getData();
+                    let count: number = result.getDataLength();
+                    if (count > 0) {
+                        pager.setLength(result.getDataLength());
+                    }
+                }
+                return pager;
+            }));
+    }
+
     saveCommon(common: Common, user: User): Observable<string> {
         //this.result = new Result();
         console.log("common :" + common.get("abrv"));

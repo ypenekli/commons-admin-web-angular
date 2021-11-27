@@ -67,6 +67,21 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
       });
   }
 
+  private name:string = "";
+  private findCommonsByName(name:string): void {    
+    if(this.name != name){
+      this.name = name;
+      this.pager.setPageIndex(0);
+    }
+    this.repository.findByName(this.parentId, this.name, this.pager)
+      .subscribe(res => {
+        if (this.commons.length > 0) {
+          this.common = this.commons[0];
+          this.pager = res;
+        }
+      });
+  }
+
   get commons(): Common[] {
     return this.repository.getCommons();
   }
@@ -77,11 +92,8 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     this.pager.setLength(event.length);
     this.findCommons();
   }
-
-
-
   searchByName(value:string){
-    console.log("search by name" + value);
+    this.findCommonsByName(value);
   }
 
 }
