@@ -1,18 +1,5 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <section fxLayout="row wrap" fxLayoutAlign="center center" class="admin-container">
-
-    <mat-toolbar class="search-block mat-elevation-z4" [class.active]="toggleSearch">
-        <mat-toolbar-row style="padding: 0 5px;">
-            <button class="search-icon" mat-icon-button>
-                <mat-icon>search</mat-icon>
-            </button>
-            <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar>
-            <button mat-button mat-icon-button (click)="searchClose()">
-                <mat-icon>close</mat-icon>
-            </button>
-        </mat-toolbar-row>
-    </mat-toolbar>
-
     <mat-card fxFlex.xs="100%">
         <mat-card-header>
             <a href="#" [routerLink]="['/commons3', common.p2Id]" title="Parent items" i18n-title="@@parent_items"

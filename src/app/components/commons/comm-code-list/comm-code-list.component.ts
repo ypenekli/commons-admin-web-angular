@@ -42,7 +42,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
     }
     )
     this.common = new Common(-1);
-    this.toolbarSearch.addListener("openSearch", this.openSearch.bind(this));
+    this.toolbarSearch.addListener("searchByName", this.searchByName.bind(this));
   }
   ngAfterViewInit(): void {
     this.paginator.page
@@ -79,18 +79,8 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
 
 
 
-  toggleSearch: boolean = false;
-  @ViewChild('searchbar') searchbar: ElementRef | undefined;
-  searchText = '';
+  searchByName(value:string){
+    console.log("search by name");
+  }
 
-  openSearch() {
-    this.toggleSearch = true;
-    if(this.searchbar)
-    this.searchbar.nativeElement.focus();
-  }
-  searchClose() {
-    this.searchText = '';
-    this.toggleSearch = false;
-    console.log("close search");
-  }
 }

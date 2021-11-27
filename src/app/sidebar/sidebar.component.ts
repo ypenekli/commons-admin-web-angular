@@ -12,7 +12,7 @@ import { SearchEvent } from '../model/search-event';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.scss', './sidebar.component.css']
 })
 export class SidebarComponent {  
 
@@ -94,7 +94,23 @@ export class SidebarComponent {
       );   
     }
     
-    openSearch() {
-       this.toolbarSearch.callEvent("openSearch");    
-    }
+    searchByName(value:string) {
+      this.toolbarSearch.callEvent("openSearch", value);    
+  }
+
+
+  toggleSearch: boolean = false;
+  @ViewChild('searchbar') searchbar: ElementRef | undefined;
+  searchText = '';
+
+  openSearch() {
+    this.toggleSearch = true;
+    if(this.searchbar)
+    this.searchbar.nativeElement.focus();
+  }
+  searchClose() {
+    this.searchText = '';
+    this.toggleSearch = false;
+    console.log("close search");
+  }
   }
