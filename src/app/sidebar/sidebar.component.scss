@@ -16,7 +16,8 @@ header{
     @extend header;
     background: #fff;
     &.active{
-      width: 100%;
+      position: absolute;
+      width: 100%;      
     }
     .search-control{
       flex: 1;

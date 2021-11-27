@@ -1,33 +1,29 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-      <mat-toolbar>{{userName}}</mat-toolbar>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>{{userName}}</mat-toolbar>
     <mat-nav-list *ngFor="let item of menu">
-      <span class="full-width">{{item.name}}   
-        <mat-list-item class="submenu"  *ngFor="let subitem of getMenuSubList(item.id)" >
-          <mat-list-item  [routerLink]="getUrl(subitem.url)" (click)="close(drawer, subitem)">{{subitem.name}}</mat-list-item>
-        </mat-list-item> 
-      </span> 
+      <span class="full-width">{{item.name}}
+        <mat-list-item class="submenu" *ngFor="let subitem of getMenuSubList(item.id)">
+          <mat-list-item [routerLink]="getUrl(subitem.url)" (click)="close(drawer, subitem)">{{subitem.name}}
+          </mat-list-item>
+        </mat-list-item>
+      </span>
     </mat-nav-list>
-    <div  class="sidenav-button-row">
-      <button mat-raised-button  color="warn" (click)="close(drawer)" i18n="@@help">
+    <div class="sidenav-button-row">
+      <button mat-raised-button color="warn" (click)="close(drawer)" i18n="@@help">
         Help
-      </button>      
-      <button mat-raised-button color="primary" [hidden]="isAuthenticated" [routerLink]="getUrl('.Login')" (click)="close(drawer)" i18n="@@login">Login</button>
-      <button mat-raised-button color="primary" [hidden]="!isAuthenticated"  (click)="logout(drawer)" i18n="@@logout">
+      </button>
+      <button mat-raised-button color="primary" [hidden]="isAuthenticated" [routerLink]="getUrl('.Login')"
+        (click)="close(drawer)" i18n="@@login">Login</button>
+      <button mat-raised-button color="primary" [hidden]="!isAuthenticated" (click)="logout(drawer)" i18n="@@logout">
         Logout
       </button>
-    </div>   
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
+    <mat-toolbar color="primary" class="main-header mat-elevation-z4" [class.hidden]="toggleSearch">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
@@ -35,23 +31,23 @@
 
       <button mat-icon-button *ngIf="isSearchShown" (click)="openSearch()">
         <mat-icon>search</mat-icon>
-    </button>
+      </button>
     </mat-toolbar>
 
     <mat-toolbar class="search-block mat-elevation-z4" [class.active]="toggleSearch">
-      <mat-toolbar-row style="padding: 0 5px;">
-          <button class="search-icon" mat-icon-button (click)="searchByName(searchbar.value)">
-              <mat-icon>search</mat-icon>
-          </button>
-          <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar>
-          <button mat-button mat-icon-button (click)="searchClose()">
-              <mat-icon>close</mat-icon>
-          </button>
+      <mat-toolbar-row style="padding:8px 0 0 10px; flex:1;">
+        <button class="search-icon" mat-icon-button (click)="searchByName(searchbar.value)">
+          <mat-icon>search</mat-icon>
+        </button>
+        <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar>
+        <button mat-button mat-icon-button (click)="searchClose()">
+          <mat-icon>close</mat-icon>
+        </button>
       </mat-toolbar-row>
     </mat-toolbar>
 
-    <div class="container"> 
-      <router-outlet></router-outlet>     
+    <div class="container">
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
