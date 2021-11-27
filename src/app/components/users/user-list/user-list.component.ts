@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/entities/user.model';
 import { UserModel } from 'src/app/model/repositories/user.repository';
 import { SearchEvent } from 'src/app/model/search-event';
@@ -12,16 +12,17 @@ import { Pager } from 'src/service/pager.model';
 })
 export class UserListComponent implements OnInit {
   public errorMessage:string = '';
-  displayedColumns: string[] = ['id', 'image', 'name'];
+  displayedColumns: string[] = ['image', 'name', 'id'];
   constructor(  
     private session: Session,
     private userModel:UserModel,
     private toolbarSearch:SearchEvent) { 
-      this.toolbarSearch.addListener("openSearch", this.openSearch.bind(this));
+      this.toolbarSearch.addListener("searchByName", this.findUsersByName.bind(this));
     }
 
   ngOnInit(): void { 
-    this.session.isSearchShown = true;   
+    this.session.isSearchShown = true;
+    this.findUsersByName("");
   }
 
   get users():User[]{
@@ -36,22 +37,7 @@ export class UserListComponent implements OnInit {
       if(users == null || users.length == 0){
         this.errorMessage = $localize`:@@no_record_found:No results found`
       }else this.errorMessage = '';
-    });
-    
+    });    
   }
-
-  toggleSearch: boolean = false;
-  @ViewChild('searchbar') searchbar: ElementRef | undefined;
-  searchText = '';
-
-  openSearch() {
-    this.toggleSearch = true;
-    if(this.searchbar)
-    this.searchbar.nativeElement.focus();
-  }
-  searchClose() {
-    this.searchText = '';
-    this.toggleSearch = false;
-    console.log("close search");
-  }
+  
 }

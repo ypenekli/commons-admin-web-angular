@@ -18,7 +18,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   common: Common;
 
   pager: Pager;
-  displayedColumns: string[] = ['abrv', 'id', 'name'];
+  displayedColumns: string[] = ['abrv', 'name',  'id'];
  
   pageSizeOptions = [5, 10, 25];
   showFirstLastButtons = true;
@@ -53,6 +53,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.session.isSearchShown = true;
     this.findCommons();
   }
 
@@ -80,7 +81,7 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
 
 
   searchByName(value:string){
-    console.log("search by name");
+    console.log("search by name" + value);
   }
 
 }

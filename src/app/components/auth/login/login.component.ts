@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     private appFuncModel:AppFuncModel) {   }
 
   ngOnInit(): void {  
+    this.session.isSearchShown = false;
     this.form = new FormGroup({
       username : new FormControl('', [
         Validators.required,

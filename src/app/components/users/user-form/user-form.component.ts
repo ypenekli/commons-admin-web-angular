@@ -36,6 +36,7 @@ export class UserFormComponent extends BaseForm implements OnInit {
     }
 
   ngOnInit(): void {
+    this.session.isSearchShown = false;
     this.messages = '';
     this.commonModel.findByParent(CommonModel.PARENT_ID_CITY_TR, null)
     .subscribe(res=>{

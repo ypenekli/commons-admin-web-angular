@@ -30,6 +30,7 @@ export class CommCodeFormComponent extends BaseForm implements OnInit {
     }
 
   ngOnInit(): void {
+    this.session.isSearchShown = false;
     this.messages = '';
     this.common = this.repository.getCommon(this.id) ;
     this.fieldsToValidate = new Map([

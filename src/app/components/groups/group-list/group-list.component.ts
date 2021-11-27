@@ -9,12 +9,13 @@ import { Session } from 'src/app/model/session.model';
   styleUrls: ['./group-list.component.css']
 })
 export class GroupListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name'];
+  displayedColumns: string[] = ['name', 'id'];
   constructor(
     private session:Session,
     private repository:GroupModel) { }
 
   ngOnInit(): void {
+    this.session.isSearchShown = false;
     this.repository.findUserGroupList(this.session.getUser().id)
     .subscribe(res=>{});
   }

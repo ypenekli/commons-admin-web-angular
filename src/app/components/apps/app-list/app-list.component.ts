@@ -9,12 +9,13 @@ import { Session } from 'src/app/model/session.model';
   styleUrls: ['./app-list.component.css']
 })
 export class AppListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name'];
+  displayedColumns: string[] = ['name', 'id'];
   constructor(
     private session:Session,
     private repository:AppModel) { }
 
     ngOnInit(): void {
+      this.session.isSearchShown = false;
       this.repository.findApps(this.session.getUser().id)
       .subscribe(res=>{});
     }

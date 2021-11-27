@@ -41,7 +41,8 @@ export class ChangePwdComponent implements OnInit {
 
     }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {  
+    this.session.isSearchShown = false; 
   }
 
   public change_pwd = (form:any) => {

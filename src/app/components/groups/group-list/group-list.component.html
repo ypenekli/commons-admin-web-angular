@@ -2,18 +2,18 @@
     <mat-card  fxFlex.xs="100%">        
         <mat-card-content>
             <table mat-table [dataSource]="groups" class="admin-table">
-                <!-- Group Id Column -->
-                <ng-container matColumnDef="id">
-                    <th mat-header-cell *matHeaderCellDef i18n="@@code"> Code </th>
-                    <td mat-cell *matCellDef="let group"> {{group.id}} </td>
-                </ng-container>
                 <!-- Goup Name Column -->
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef i18n="@@group_name"> Goup Name </th>
                     <td mat-cell *matCellDef="let group">
                         <a href="#" [routerLink]="['/group/1', group.id]">{{group.name}}</a>
                     </td>
-                </ng-container>       
+                </ng-container> 
+                <!-- Group Id Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef i18n="@@code"> Code </th>
+                    <td mat-cell *matCellDef="let group"> {{group.id}} </td>
+                </ng-container>      
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table> 
     </mat-card-content>
