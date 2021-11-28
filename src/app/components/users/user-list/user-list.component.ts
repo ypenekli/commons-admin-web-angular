@@ -40,4 +40,7 @@ export class UserListComponent implements OnInit {
     });    
   }
   
+  searchClose(){
+    this.toolbarSearch.callEvent("searchClose");
+  }
 }

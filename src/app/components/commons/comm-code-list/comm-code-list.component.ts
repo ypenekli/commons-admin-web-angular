@@ -95,5 +95,9 @@ export class CommCodeListComponent implements OnInit, AfterViewInit {
   searchByName(value:string){
     this.findCommonsByName(value);
   }
+  
+  searchClose(){
+    this.toolbarSearch.callEvent("searchClose");
+  }
 
 }

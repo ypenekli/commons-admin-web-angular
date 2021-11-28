@@ -27,7 +27,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <div style="padding:8px 0 0 10px; flex:1;">{{funcName}}</div>
+      <div style="padding:8px 0 0 10px; flex:1;" (click)="openSearch()">{{funcName}}</div>
 
       <button mat-icon-button *ngIf="isSearchShown" (click)="openSearch()">
         <mat-icon>search</mat-icon>
@@ -39,7 +39,8 @@
         <button class="search-icon" mat-icon-button (click)="searchByName(searchbar.value)">
           <mat-icon>search</mat-icon>
         </button>
-        <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar>
+        <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar
+          (keydown.enter)="searchByName(searchbar.value)">
         <button mat-button mat-icon-button (click)="searchClose()">
           <mat-icon>close</mat-icon>
         </button>

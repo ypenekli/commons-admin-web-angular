@@ -27,7 +27,9 @@ export class SidebarComponent {
     private router: Router,
     private breakpointObserver: BreakpointObserver,
     private toolbarSearch: SearchEvent
-  ) { }
+  ) { 
+    this.toolbarSearch.addListener("searchClose", this.searchClose.bind(this));
+  }
 
   get user(): User {
     return this.session.getUser();
@@ -74,6 +76,7 @@ export class SidebarComponent {
   }
 
   close(drawer: any, subitem?: AppFunc) {
+    this.searchClose();
     if (subitem != null) {
       this.session.setFuncName(subitem.name);
     }
@@ -95,7 +98,7 @@ export class SidebarComponent {
   }
 
   searchByName(value: string) {
-    this.searchClose();
+   // this.searchClose();
     this.toolbarSearch.callEvent("searchByName", value);
   }
 
@@ -105,9 +108,11 @@ export class SidebarComponent {
   searchText = '';
 
   openSearch() {
-    this.toggleSearch = true;
-    if (this.searchbar)
-      this.searchbar.nativeElement.focus();
+    if(this.isSearchShown){
+      this.toggleSearch = true;
+      if (this.searchbar)
+        this.searchbar.nativeElement.focus();
+    }
   }
   searchClose() {
     this.searchText = '';

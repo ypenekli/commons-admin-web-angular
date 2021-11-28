@@ -23,7 +23,8 @@
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef i18n="@@common_code_name"> Code Name </th>
                     <td mat-cell *matCellDef="let common">
-                        <a href="#" [routerLink]="['/common/1', common.id, common.parentId]">{{common.name}}</a>
+                        <a href="#" [routerLink]="['/common/1', common.id, common.parentId]"
+                            (click)="searchClose()">{{common.name}}</a>
                     </td>
                 </ng-container>
                 <!-- Code Id Column -->
