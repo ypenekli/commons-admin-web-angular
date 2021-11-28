@@ -13,7 +13,8 @@ export class RestService<T> implements OnInit {
   static ipAddress: string;
   header: HttpHeaders;
   ipUrl: string = "http://api.ipify.org/?format=json";
-  baseUrl: string = "http://localhost:81/commons-admin/service/";
+  //baseUrl: string = "http://localhost:81/commons-admin/service/";
+  baseUrl: string = "http://192.168.48.247:81/commons-admin/service/";
 
 
 
