@@ -21,7 +21,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
   appFunc:AppFunc | any; 
   private appNode:AppFunc[] = [];
  
-  funcDisplayedColumns: string[] = ['id', 'name'];
+  funcDisplayedColumns: string[] = ['name', 'id'];
 
   constructor(
     private session: Session,
