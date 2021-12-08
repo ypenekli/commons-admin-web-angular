@@ -2,7 +2,7 @@
 <section fxLayout="row wrap" fxLayoutAlign="center center" class="admin-container">
     <mat-card fxFlex.xs="100%">
         <mat-card-header>
-            <a href="#" [routerLink]="['/commons3', common.p2Id]" title="Parent items" i18n-title="@@parent_items"
+            <a *ngIf="common.level > 0" href="#" [routerLink]="['/commons3', common.p2Id]" title="Parent items" i18n-title="@@parent_items"
                 name="title">
                 <mat-icon>keyboard_arrow_up</mat-icon>
             </a>

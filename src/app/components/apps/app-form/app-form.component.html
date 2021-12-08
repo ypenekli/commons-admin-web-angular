@@ -71,8 +71,8 @@
                 <mat-tab i18n-label="@@app_funcs" label="Functions" name="label">
 
                     <mat-card-header>
-                        <a [routerLink]="[]" (click)="onGoUp()" title="Parent items" i18n-title="@@parent_items"
-                            name="title">
+                        <a *ngIf="app.id != appFunc.id" [routerLink]="[]" (click)="onGoUp()" title="Parent items"
+                            i18n-title="@@parent_items" name="title">
                             <mat-icon>keyboard_arrow_up</mat-icon>
                         </a>
                         {{appFunc.name}}
@@ -82,8 +82,8 @@
                         <!-- Subitems Column -->
                         <ng-container matColumnDef="abrv">
                             <td mat-cell *matCellDef="let func">
-                                <a [routerLink]="[]" (click)="sellectAppFunc(func)" title="Sub items" i18n-title="@@sub_items"
-                                    name="title">
+                                <a [routerLink]="[]" (click)="sellectAppFunc(func)" title="Sub items"
+                                    i18n-title="@@sub_items" name="title">
                                     <mat-icon>keyboard_arrow_down</mat-icon>
                                 </a>
                             </td>
