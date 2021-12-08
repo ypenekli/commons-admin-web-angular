@@ -19,6 +19,7 @@ const routes: Routes = [
   {path:"users", component:UserListComponent},
   {path:"app/:mode/:id", component:AppFormComponent},
   {path:"apps", component:AppListComponent},
+  {path:"app_funcs/:parent_id", component:AppFormComponent},
   {path:"group/:mode/:id", component:GroupFormComponent},
   {path:"groups", component:GroupListComponent},
   {path:"commons", component:CommCodeListComponent},

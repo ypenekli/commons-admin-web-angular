@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaseForm } from 'src/app/model/base-form';
@@ -9,6 +10,7 @@ import { AppFuncModel } from 'src/app/model/repositories/app-func.repository';
 import { AppModel } from 'src/app/model/repositories/app.repository';
 import { Session } from 'src/app/model/session.model';
 import { Reference } from 'src/service/reference.model';
+import { AppDialogComponent } from './app-dialog.component';
 
 @Component({
   selector: 'app-app-form',
@@ -21,7 +23,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
   appFunc:AppFunc | any; 
   private appNode:AppFunc[] = [];
  
-  funcDisplayedColumns: string[] = ['name', 'id'];
+  funcDisplayedColumns: string[] = ['abrv', 'name', 'id'];
 
   constructor(
     private session: Session,
@@ -29,7 +31,8 @@ export class AppFormComponent extends BaseForm implements OnInit {
     private repository: AppModel,
     private appFuncRepository:AppFuncModel,
     private router:Router,
-    private snackBar:MatSnackBar) {
+    private snackBar:MatSnackBar,
+    public dialog: MatDialog) {
       super(aRoute);        
       this.id = aRoute.snapshot.params['id'];      
       this.app = new App();
@@ -58,6 +61,19 @@ export class AppFormComponent extends BaseForm implements OnInit {
   
   get appFuncs():AppFunc[]{
     return this.appFuncRepository.getAppFuncs();
+  }
+
+  openDialog(apppFunc :AppFunc): void {
+    const dialogRef = this.dialog.open(AppDialogComponent, 
+      {
+        width: '350px',
+        data: {appFunc:apppFunc},
+      });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.appFunc = result;
+    });
   }
 
   saveApp(form: NgForm) {         
@@ -105,7 +121,9 @@ export class AppFormComponent extends BaseForm implements OnInit {
     this.appFunc = appFunc;
     if(!appFunc.isNew()){
       this.appFuncRepository.findAppFuncs(this.appFunc.id)
-      .subscribe(res=>{});
+      .subscribe(res=>{   
+          
+      });
     }
   }
   onGoUp(){

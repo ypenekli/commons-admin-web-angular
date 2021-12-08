@@ -1,123 +1,112 @@
 <section fxLayout="row wrap" fxLayoutAlign="center center" class="admin-container">
-    <mat-card  fxFlex.xs="100%">        
-            <mat-card-content>
-                <mat-tab-group mat-align-tabs="start" class="admin-tab"> 
-                    <mat-tab i18n-label="@@app_header"  label="Application Info" name="label">                         
-                        <form  #appForm="ngForm" (ngSubmit)="saveApp(appForm)"  autocomplete="of"
-                            fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="3px">
-                            <mat-toolbar>
-                                <mat-label i18n="@@app_code">Application Code</mat-label>
-                                <mat-label>: {{app.id}}</mat-label>
-                                <span class="spacer"></span>
-                                <mat-label>({{modeLabel}})</mat-label>
-                            </mat-toolbar>                     
-                            <p>                            
+    <mat-card fxFlex.xs="100%">
+        <mat-card-content>
+            <mat-tab-group mat-align-tabs="start" class="admin-tab">
+                <mat-tab i18n-label="@@app_header" label="Application Info" name="label">
+                    <form #appForm="ngForm" (ngSubmit)="saveApp(appForm)" autocomplete="of" fxLayout="column wrap"
+                        fxLayoutAlign="center center" fxLayoutGap="3px">
+                        <mat-toolbar>
+                            <mat-label i18n="@@app_code">Application Code</mat-label>
+                            <mat-label>: {{app.id}}</mat-label>
+                            <span class="spacer"></span>
+                            <mat-label>({{modeLabel}})</mat-label>
+                        </mat-toolbar>
+                        <p>
                             <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
-                                <mat-label i18n="@@name">Name</mat-label> 
-                                <input matInput required  minlength="5" maxlength="50" [(ngModel)]="app.name" name="app_name" #app_name="ngModel">
-                                <div *ngIf="hasErrors(app_name)"><mat-error  *ngFor="let error of getErrors(app_name)">{{error}}</mat-error> </div>
+                                <mat-label i18n="@@name">Name</mat-label>
+                                <input matInput required minlength="5" maxlength="50" [(ngModel)]="app.name"
+                                    name="app_name" #app_name="ngModel">
+                                <div *ngIf="hasErrors(app_name)">
+                                    <mat-error *ngFor="let error of getErrors(app_name)">{{error}}</mat-error>
+                                </div>
                             </mat-form-field>
-                            </p> 
-                            <p>
-                            <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
+                        </p>
+                        <p>
+                            <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
                                 <mat-label i18n="@@description">Description</mat-label>
-                                <input matInput required  minlength="5" maxlength="100" [(ngModel)]="app.description" name="description" #description="ngModel">
-                                <div *ngIf="hasErrors(description)"><mat-error  *ngFor="let error of getErrors(description)">{{error}}</mat-error> </div>                               
-                            </mat-form-field> 
-                            </p>  
-                            <p>
-                            <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
-                                <mat-label i18n="@@url">Url</mat-label> 
+                                <input matInput required minlength="5" maxlength="100" [(ngModel)]="app.description"
+                                    name="description" #description="ngModel">
+                                <div *ngIf="hasErrors(description)">
+                                    <mat-error *ngFor="let error of getErrors(description)">{{error}}</mat-error>
+                                </div>
+                            </mat-form-field>
+                        </p>
+                        <p>
+                            <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
+                                <mat-label i18n="@@url">Url</mat-label>
                                 <input matInput name="url" [(ngModel)]="app.url" type="url">
-                            </mat-form-field> 
-                            </p>
-                            <p>                             
+                            </mat-form-field>
+                        </p>
+                        <p>
                             <mat-form-field class="admin-full-width" style='--maxwidth:150px' appearance="fill">
                                 <mat-label i18n="@@target">Target</mat-label>
                                 <select matNativeControl name="target" [(ngModel)]="app.target">
                                     <option value="" selected></option>
                                     <option *ngFor="let target of appTargets" [value]="target.key">
-                                    {{target.value}}
+                                        {{target.value}}
                                     </option>
                                 </select>
                             </mat-form-field>
-                            </p> 
-                            <p>
-                            <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
-                                <mat-label i18n="@@author">Author</mat-label> 
-                                <input matInput name="author" [(ngModel)]="app.author" >
-                            </mat-form-field> 
-                            </p>
-                            <p>
-                            <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
-                                <mat-label i18n="@@organization">Organization</mat-label> 
-                                <input matInput name="organization" [(ngModel)]="app.organization" >
-                            </mat-form-field> 
-                            </p>                            
-                            <mat-card-actions align="start">  
-                                <button i18n="@@save" mat-raised-button color="primary" type="submit" [disabled]="!appForm.valid">Save</button>
-                                <button i18n="@@cancel" mat-raised-button color="warn"  (click)="onAppCancel()" type="button">Cancel</button>
-                            </mat-card-actions>   
-                        </form>
-                    </mat-tab>
-                    <mat-tab i18n-label="@@app_funcs" label="Functions" name="label">
-                    <form  #funcForm="ngForm" (ngSubmit)="saveFunc(funcForm)"  autocomplete="of"
-                        fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="3px">   
-                        <table class="admin-form-header-table">
-                            <tr>
-                                <th style="text-align: left" i18n="@@func_code">Func Code</th>
-                                <td>: {{appFunc.id}}</td>
-                                <th>({{modeLabel}})</th>
-                            </tr>
-                        </table> 
-                        <p>                            
-                        <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
-                            <mat-label i18n="@@func_name">Func Name</mat-label> 
-                            <input matInput required  minlength="2" maxlength="50" [(ngModel)]="appFunc.name" name="func_name" #func_name="ngModel">
-                            <div *ngIf="hasErrors(func_name)"><mat-error  *ngFor="let error of getErrors(func_name)">{{error}}</mat-error> </div>
-                        </mat-form-field>
                         </p>
                         <p>
-                        <mat-form-field class="admin-full-width" style='--maxwidth:400px' >
-                            <mat-label i18n="@@url">Url</mat-label> 
-                            <input matInput name="url" [(ngModel)]="appFunc.url" type="url">
-                        </mat-form-field> 
-                        </p>                          
-                        <mat-form-field class="admin-full-width" style='--maxwidth:250px' appearance="fill">
-                            <mat-label i18n="@@target">Target</mat-label>
-                            <select matNativeControl name="target" [(ngModel)]="appFunc.target">
-                                <option value="" selected></option>
-                                <option *ngFor="let target of funcTargets" [value]="target.key">
-                                {{target.value}}
-                                </option>
-                            </select>
-                        </mat-form-field>                                                                           
-                        <mat-card-actions align="start"> 
-                            <button i18n="@@save" mat-raised-button color="primary" type="submit" [disabled]="!funcForm.valid">Save</button>
-                            <button i18n="@@add_func" mat-raised-button color="accent"  (click)="onAddFunc()" [disabled]="disableAddFunc" type="button">Add Func</button> 
-                            <button i18n="@@go_up" mat-raised-button color="accent"  (click)="onFuncCancel()" [disabled]="disableGouUp" type="button">Go Up</button>
-                        </mat-card-actions>  
-                        <table mat-table [dataSource]="appFuncs" class="admin-table">
-                            <!-- App Name Column -->
-                            <ng-container matColumnDef="name">
-                                <th mat-header-cell *matHeaderCellDef i18n="@@fun_name"> Func Name </th>
-                                <td mat-cell *matCellDef="let func">
-                                    <a [routerLink]="[]" (click)="sellectAppFunc(func)">{{func.name}}</a>
-                                </td>
-                            </ng-container>    
-                            <!-- App Id Column -->
-                            <ng-container matColumnDef="id">
-                                <th mat-header-cell *matHeaderCellDef i18n="@@code"> Code </th>
-                                <td mat-cell *matCellDef="let func"> {{func.id}} </td>
-                            </ng-container>                        
-                            <tr mat-row *matRowDef="let row; columns: funcDisplayedColumns;"></tr>
-                        </table> 
-                    </form>  
-                    </mat-tab>    
-                    <mat-tab i18n-label="@@app_versions" label="Versions" name="label">        
-                    </mat-tab>
-                </mat-tab-group>
-            </mat-card-content>    
+                            <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
+                                <mat-label i18n="@@author">Author</mat-label>
+                                <input matInput name="author" [(ngModel)]="app.author">
+                            </mat-form-field>
+                        </p>
+                        <p>
+                            <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
+                                <mat-label i18n="@@organization">Organization</mat-label>
+                                <input matInput name="organization" [(ngModel)]="app.organization">
+                            </mat-form-field>
+                        </p>
+                        <mat-card-actions align="start">
+                            <button i18n="@@save" mat-raised-button color="primary" type="submit"
+                                [disabled]="!appForm.valid">Save</button>
+                            <button i18n="@@cancel" mat-raised-button color="warn" (click)="onAppCancel()"
+                                type="button">Cancel</button>
+                        </mat-card-actions>
+                    </form>
+                </mat-tab>
+                <mat-tab i18n-label="@@app_funcs" label="Functions" name="label">
+
+                    <mat-card-header>
+                        <a [routerLink]="[]" (click)="onGoUp()" title="Parent items" i18n-title="@@parent_items"
+                            name="title">
+                            <mat-icon>keyboard_arrow_up</mat-icon>
+                        </a>
+                        {{appFunc.name}}
+                    </mat-card-header>
+
+                    <table mat-table [dataSource]="appFuncs" class="admin-table">
+                        <!-- Subitems Column -->
+                        <ng-container matColumnDef="abrv">
+                            <td mat-cell *matCellDef="let func">
+                                <a [routerLink]="[]" (click)="sellectAppFunc(func)" title="Sub items" i18n-title="@@sub_items"
+                                    name="title">
+                                    <mat-icon>keyboard_arrow_down</mat-icon>
+                                </a>
+                            </td>
+                        </ng-container>
+                        <!-- App Name Column -->
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef i18n="@@fun_name"> Func Name </th>
+                            <td mat-cell *matCellDef="let func">
+                                <a [routerLink]="[]" (click)="openDialog(func)">{{func.name}}</a>
+                            </td>
+                        </ng-container>
+                        <!-- App Id Column -->
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef i18n="@@code"> Code </th>
+                            <td mat-cell *matCellDef="let func"> {{func.id}} </td>
+                        </ng-container>
+                        <tr mat-row *matRowDef="let row; columns: funcDisplayedColumns;"></tr>
+                    </table>
+
+                </mat-tab>
+                <mat-tab i18n-label="@@app_versions" label="Versions" name="label">
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
     </mat-card>
 </section>
-

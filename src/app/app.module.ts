@@ -40,6 +40,7 @@ import { GroupsModule } from './components/groups/groups.module';
 import { CommonsModule } from './components/commons/commons.module';
 import {  MatPaginatorModule } from '@angular/material/paginator';
 import { SearchEvent } from './model/search-event';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { SearchEvent } from './model/search-event';
     MatIconModule,
     MatSnackBarModule,
     MatPaginatorModule,
+    MatDialogModule,
 
     
     AuthModule,

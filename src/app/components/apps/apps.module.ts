@@ -19,11 +19,13 @@ import { AppFormComponent } from './app-form/app-form.component';
 import { AppListComponent } from './app-list/app-list.component';
 import { AppModel } from 'src/app/model/repositories/app.repository';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AppDialogComponent } from './app-form/app-dialog.component';
 
 
 
 @NgModule({
-  declarations: [AppFormComponent, AppListComponent],
+  declarations: [AppFormComponent, AppListComponent, AppDialogComponent],
   imports: [  
     CommonModule, 
     BrowserModule, 
@@ -41,7 +43,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatMenuModule,
     MatIconModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [AppModel],
 })

@@ -1,0 +1,41 @@
+<mat-card fxFlex.xs="100%">
+    <form #funcForm="ngForm" (ngSubmit)="saveFunc(funcForm)" autocomplete="of" fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="3px">
+        <table class="admin-form-header-table">
+            <tr>
+                <th style="text-align: left" i18n="@@func_code">Func Code</th>
+                <td>: {{appFunc.id}}</td>
+                <th>({{modeLabel}})</th>
+            </tr>
+        </table>
+        <p>
+            <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
+                <mat-label i18n="@@func_name">Func Name</mat-label>
+                <input matInput required minlength="2" maxlength="50" [(ngModel)]="appFunc.name" name="func_name"
+                    #func_name="ngModel">
+                <div *ngIf="hasErrors(func_name)">
+                    <mat-error *ngFor="let error of getErrors(func_name)">{{error}}</mat-error>
+                </div>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
+                <mat-label i18n="@@url">Url</mat-label>
+                <input matInput name="url" [(ngModel)]="appFunc.url" type="url">
+            </mat-form-field>
+        </p>
+        <mat-form-field class="admin-full-width" style='--maxwidth:250px' appearance="fill">
+            <mat-label i18n="@@target">Target</mat-label>
+            <select matNativeControl name="target" [(ngModel)]="appFunc.target">
+                <option value="" selected></option>
+                <option *ngFor="let target of funcTargets" [value]="target.key">
+                    {{target.value}}
+                </option>
+            </select>
+        </mat-form-field>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">No Thanks</button>
+            <button mat-button [mat-dialog-close]="appFunc" cdkFocusInitial>Ok</button>
+          </div>
+    </form>
+</mat-card>
