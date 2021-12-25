@@ -69,7 +69,6 @@
                     </form>
                 </mat-tab>
                 <mat-tab i18n-label="@@app_funcs" label="Functions" name="label">
-
                     <mat-card-header>
                         <a *ngIf="app.id != appFunc.id" [routerLink]="[]" (click)="onGoUp()" title="Parent items"
                             i18n-title="@@parent_items" name="title">
@@ -77,7 +76,6 @@
                         </a>
                         {{appFunc.name}}
                     </mat-card-header>
-
                     <table mat-table [dataSource]="appFuncs" class="admin-table">
                         <!-- Subitems Column -->
                         <ng-container matColumnDef="abrv">
@@ -102,7 +100,6 @@
                         </ng-container>
                         <tr mat-row *matRowDef="let row; columns: funcDisplayedColumns;"></tr>
                     </table>
-
                 </mat-tab>
                 <mat-tab i18n-label="@@app_versions" label="Versions" name="label">
                 </mat-tab>

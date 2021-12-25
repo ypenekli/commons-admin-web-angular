@@ -63,16 +63,16 @@ export class AppFormComponent extends BaseForm implements OnInit {
     return this.appFuncRepository.getAppFuncs();
   }
 
-  openDialog(apppFunc :AppFunc): void {
+  openDialog(subApppFunc :AppFunc): void {
     const dialogRef = this.dialog.open(AppDialogComponent, 
       {
         width: '350px',
-        data: {appFunc:apppFunc},
+        data: {subApppFunc:subApppFunc},
       });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.appFunc = result;
+      //this.appFunc = result;
     });
   }
 

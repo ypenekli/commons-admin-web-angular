@@ -19,7 +19,7 @@ import { Reference } from "src/service/reference.model";
 })
 export class AppDialogComponent extends BaseForm implements OnInit {
 
-    appFunc: AppFunc;
+    subAppFunc: AppFunc;
 
     constructor(
         private session: Session,
@@ -31,7 +31,7 @@ export class AppDialogComponent extends BaseForm implements OnInit {
         @Inject(MAT_DIALOG_DATA) public data: any,
     ) {
         super(aRoute);
-        this.appFunc = data.appFunc;
+        this.subAppFunc = data.subApppFunc;
     }
 
     ngOnInit(): void {
@@ -60,7 +60,7 @@ export class AppDialogComponent extends BaseForm implements OnInit {
 
     saveFunc(form: NgForm) {
         if (form.valid) {
-            this.appFuncRepository.saveFunc(this.appFunc, 1, this.session.getUser())
+            this.appFuncRepository.saveFunc(this.subAppFunc, 1, this.session.getUser())
                 .subscribe(message => {
                     //this.onGoUp();
                     this.snackBar.open(message, $localize`:@@save:Save`, {
@@ -70,7 +70,8 @@ export class AppDialogComponent extends BaseForm implements OnInit {
         }
     }
 
-    onNoClick(): void {
+    onCancel(): void {
+        this.subAppFunc.reject();
         this.dialogRef.close();
     }
 }
