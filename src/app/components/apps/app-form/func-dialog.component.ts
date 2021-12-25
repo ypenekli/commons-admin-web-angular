@@ -2,10 +2,9 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { BaseForm } from "src/app/model/base-form";
 import { AppFunc } from "src/app/model/entities/app-func.model";
-import { App } from "src/app/model/entities/app.model";
 import { AppFuncModel } from "src/app/model/repositories/app-func.repository";
 import { AppModel } from "src/app/model/repositories/app.repository";
 import { Session } from "src/app/model/session.model";
@@ -13,11 +12,11 @@ import { Reference } from "src/service/reference.model";
 
 
 @Component({
-    selector: 'app-app-dialog',
-    templateUrl: './app-dialog.component.html',
+    selector: 'app-func-dialog',
+    templateUrl: './func-dialog.component.html',
     styleUrls: ['./app-form.component.css']
 })
-export class AppDialogComponent extends BaseForm implements OnInit {
+export class FuncDialogComponent extends BaseForm implements OnInit {
 
     subAppFunc: AppFunc;
 
@@ -27,7 +26,7 @@ export class AppDialogComponent extends BaseForm implements OnInit {
         private appFuncRepository: AppFuncModel,
         private snackBar: MatSnackBar,
 
-        public dialogRef: MatDialogRef<AppDialogComponent>,
+        public dialogRef: MatDialogRef<FuncDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any,
     ) {
         super(aRoute);
@@ -62,7 +61,6 @@ export class AppDialogComponent extends BaseForm implements OnInit {
         if (form.valid) {
             this.appFuncRepository.saveFunc(this.subAppFunc, 1, this.session.getUser())
                 .subscribe(message => {
-                    //this.onGoUp();
                     this.snackBar.open(message, $localize`:@@save:Save`, {
                         duration: 2000,
                     });

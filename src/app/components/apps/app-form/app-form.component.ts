@@ -10,7 +10,7 @@ import { AppFuncModel } from 'src/app/model/repositories/app-func.repository';
 import { AppModel } from 'src/app/model/repositories/app.repository';
 import { Session } from 'src/app/model/session.model';
 import { Reference } from 'src/service/reference.model';
-import { AppDialogComponent } from './app-dialog.component';
+import { FuncDialogComponent } from './func-dialog.component';
 
 @Component({
   selector: 'app-app-form',
@@ -64,7 +64,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
   }
 
   openDialog(subApppFunc :AppFunc): void {
-    const dialogRef = this.dialog.open(AppDialogComponent, 
+    const dialogRef = this.dialog.open(FuncDialogComponent, 
       {
         width: '350px',
         data: {subApppFunc:subApppFunc},
