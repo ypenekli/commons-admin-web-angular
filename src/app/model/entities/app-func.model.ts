@@ -1,6 +1,5 @@
 import { DataEntity } from 'src/service/entity.model';
 import { ITreeItem } from '../tree/tree-item-node';
-import { App } from './app.model';
 
 export class AppFunc extends DataEntity implements ITreeItem<string>{
     private static schema_name:string='COMMON';

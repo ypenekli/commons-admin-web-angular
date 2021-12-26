@@ -1,4 +1,3 @@
-import { stringify } from '@angular/compiler/src/util';
 import { DataEntity } from 'src/service/entity.model';
 
 export class User extends DataEntity{

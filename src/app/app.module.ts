@@ -32,6 +32,7 @@ import { RestService } from 'src/service/rest.service';
 import { UserModel } from './model/repositories/user.repository';
 import { GroupModel } from './model/repositories/group.repository';
 import { AppFuncModel } from './model/repositories/app-func.repository';
+import { AppVersionModel } from './model/repositories/app-versions.repository';
 import { Session } from './model/session.model';
 import { AuthModule } from './components/auth/auth.module';
 import { UsersModule } from './components/users/users.module';
@@ -80,7 +81,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     GroupsModule,    
     CommonsModule
   ],
-  providers: [Session, RestService, SearchEvent, UserModel, GroupModel, AppFuncModel],
+  providers: [Session, RestService, SearchEvent, UserModel, GroupModel, AppFuncModel, AppVersionModel],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

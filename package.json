@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 192.168.48.247 --port 300 --disable-host-check --configuration=tr",
+    "start": "ng serve --port 300 --configuration=tr --open",
+    "start2": "ng serve --host 192.168.48.247 --port 300 --disable-host-check --configuration=tr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "localize" : "ng extract-i18n --output-path src/assets/locale"
   },
   "private": true,
   "dependencies": {

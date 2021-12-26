@@ -36,18 +36,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="description" datatype="html">
         <source>Description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
@@ -58,55 +54,59 @@
         <source>Url</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.html</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="target" datatype="html">
         <source>Target</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">42</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.html</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="author" datatype="html">
         <source>Author</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="organization" datatype="html">
         <source>Organization</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="save" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">65</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">95</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
+          <context context-type="linenumber">64</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
@@ -114,7 +114,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
@@ -130,14 +130,18 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cancel" datatype="html">
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.html</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
@@ -164,54 +168,51 @@
         <source>Functions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="func_code" datatype="html">
-        <source>Func Code</source>
+      <trans-unit id="parent_items" datatype="html">
+        <source>Parent items</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="func_name" datatype="html">
-        <source>Func Name</source>
+      <trans-unit id="sub_items" datatype="html">
+        <source>Sub items</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">75</context>
+          <context context-type="linenumber">83</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
-          <context context-type="linenumber">63</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="add_func" datatype="html">
-        <source>Add Func</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="go_up" datatype="html">
-        <source>Go Up</source>
+      <trans-unit id="fun_name" datatype="html">
+        <source> Func Name </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="code" datatype="html">
         <source> Code </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">98</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
@@ -219,32 +220,36 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="fun_name" datatype="html">
-        <source> Func Name </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="app_versions" datatype="html">
         <source>Versions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app_version" datatype="html">
+        <source>Version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
       <trans-unit id="field_app_name" datatype="html">
         <source>application name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <note priority="1" from="description">FieldName</note>
       </trans-unit>
@@ -252,11 +257,15 @@
         <source>description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <note priority="1" from="description">FieldName</note>
       </trans-unit>
@@ -264,15 +273,37 @@
         <source>function name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="func_code" datatype="html">
+        <source>Func Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="func_name" datatype="html">
+        <source>Func Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="apps_name" datatype="html">
         <source> App Name </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-list/app-list.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="add_app" datatype="html">
@@ -423,11 +454,11 @@
         <source>name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">37</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/base-form.ts</context>
@@ -439,29 +470,15 @@
         <source>short name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <note priority="1" from="description">FieldName</note>
-      </trans-unit>
-      <trans-unit id="parent_items" datatype="html">
-        <source>Parent items</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="sub_items" datatype="html">
-        <source>Sub items</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="common_code_name" datatype="html">
         <source> Code Name </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-list/comm-code-list.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="add_common" datatype="html">
@@ -524,7 +541,7 @@
         <source> Goup Name </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/groups/group-list/group-list.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="add_group" datatype="html">
@@ -601,7 +618,7 @@
         <source>surname</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/base-form.ts</context>
@@ -609,25 +626,18 @@
         </context-group>
         <note priority="1" from="description">FieldName</note>
       </trans-unit>
-      <trans-unit id="search" datatype="html">
-        <source>Search</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="add_user" datatype="html">
         <source>Add New User</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="no_record_found" datatype="html">
         <source>No results found</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="error_required" datatype="html">
@@ -666,7 +676,7 @@
         <source>Add New/Edit/Delete/List</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <note priority="1" from="description">Target</note>
       </trans-unit>
@@ -674,7 +684,7 @@
         <source>Add New/Edit/Delete</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="description">Target</note>
       </trans-unit>
@@ -682,7 +692,7 @@
         <source>List</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">Target</note>
       </trans-unit>
@@ -690,7 +700,7 @@
         <source>View</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/repositories/app-func.repository.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">Target</note>
       </trans-unit>
@@ -722,7 +732,7 @@
         <source>APP/USER MANAGEMENT</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/session.model.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <note priority="1" from="description">AppName</note>
       </trans-unit>
@@ -730,7 +740,7 @@
         <source>Add New</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/session.model.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <note priority="1" from="description">Mode</note>
       </trans-unit>
@@ -738,7 +748,7 @@
         <source>Edit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/session.model.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <note priority="1" from="description">Mode</note>
       </trans-unit>
@@ -746,7 +756,7 @@
         <source>List</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/session.model.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">50</context>
         </context-group>
         <note priority="1" from="description">Mode</note>
       </trans-unit>
@@ -754,7 +764,7 @@
         <source>View</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/session.model.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <note priority="1" from="description">Mode</note>
       </trans-unit>
@@ -762,21 +772,21 @@
         <source>ACCOUNT</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/session.model.ts</context>
-          <context context-type="linenumber">112</context>
+          <context context-type="linenumber">115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="change_password" datatype="html">
         <source>Change Password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/model/session.model.ts</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">121</context>
         </context-group>
       </trans-unit>
       <trans-unit id="help" datatype="html">
         <source> Help </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/sidebar/sidebar.component.html</context>
-          <context context-type="linenumber">16,17</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="logout" datatype="html">

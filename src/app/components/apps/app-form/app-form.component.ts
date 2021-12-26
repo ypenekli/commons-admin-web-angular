@@ -5,8 +5,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaseForm } from 'src/app/model/base-form';
 import { AppFunc } from 'src/app/model/entities/app-func.model';
+import { AppVersion } from 'src/app/model/entities/app-version.model';
 import { App } from 'src/app/model/entities/app.model';
 import { AppFuncModel } from 'src/app/model/repositories/app-func.repository';
+import { AppVersionModel } from 'src/app/model/repositories/app-versions.repository';
 import { AppModel } from 'src/app/model/repositories/app.repository';
 import { Session } from 'src/app/model/session.model';
 import { Reference } from 'src/service/reference.model';
@@ -21,6 +23,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
   id:string = '-1';
   app: App; 
   appFunc:AppFunc | any; 
+  appVersionKey:number=100;
   private appNode:AppFunc[] = [];
  
   funcDisplayedColumns: string[] = ['abrv', 'name', 'id'];
@@ -30,6 +33,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
     private aRoute: ActivatedRoute,
     private repository: AppModel,
     private appFuncRepository:AppFuncModel,
+    private appVersionRepository:AppVersionModel,
     private router:Router,
     private snackBar:MatSnackBar,
     public dialog: MatDialog) {
@@ -61,6 +65,14 @@ export class AppFormComponent extends BaseForm implements OnInit {
   
   get appFuncs():AppFunc[]{
     return this.appFuncRepository.getAppFuncs();
+  }  
+  
+  get appVersionKeys():AppVersion[]{
+    return this.appVersionRepository.getAppVersionKeys();
+  }
+  
+  get appVersions():AppVersion[]{
+    return this.appVersionRepository.getAppVersions();
   }
 
   openDialog(subApppFunc :AppFunc): void {
