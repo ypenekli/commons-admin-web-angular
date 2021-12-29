@@ -980,6 +980,53 @@
           <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="add_app_version" datatype="html">
+        <source>Add New Version</source>
+        <target state="translated">Yeni sürüm ekle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="field_version" datatype="html">
+        <source>application version</source>
+        <target state="translated">uygulama sürümü</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_app_func_id" datatype="html">
+        <source>app function name</source>
+        <target state="translated">fonksiyon adı</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_publish_date" datatype="html">
+        <source>publish date</source>
+        <target state="translated">yayın tarihi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="publishdate" datatype="html">
+        <source>Publish Date</source>
+        <target state="translated">Yayın Tarihi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

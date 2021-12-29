@@ -90,7 +90,7 @@
                         <ng-container matColumnDef="name">
                             <th mat-header-cell *matHeaderCellDef i18n="@@fun_name"> Func Name </th>
                             <td mat-cell *matCellDef="let func">
-                                <a [routerLink]="[]" (click)="openDialog(func)">{{func.name}}</a>
+                                <a [routerLink]="[]" (click)="openFuncDialog(func)">{{func.name}}</a>
                             </td>
                         </ng-container>
                         <!-- App Id Column -->
@@ -105,14 +105,39 @@
                     <mat-card-header>
                         <mat-form-field class="admin-full-width" style='--maxwidth:150px' appearance="fill">
                             <mat-label i18n="@@app_version">Version</mat-label>
-                            <select matNativeControl name="version" [(ngModel)]="appVersionKey">
+                            <select matNativeControl name="version" [(ngModel)]="version" (change)="onVersionSellect()">
                                 <option value="100" selected></option>
                                 <option *ngFor="let appVers of appVersionKeys" [value]="appVers.version">
-                                    {{appVers.label}}
+                                    {{appVers.label + ' : ' + (appVers.publishDate | date :'shortDate')}}
                                 </option>
                             </select>
                         </mat-form-field>
+                        <label class="container">
+                            <input type="checkbox" [(ngModel)]="addNewVersion" data-md-icheck />
+                            Add new version
+                            <br><button mat-icon-button color="accent" (click)="openVersionDialog()"
+                                matTooltip="Add new version" i18n-matTooltip="@@add_app_version" name="matTooltip">
+                                <mat-icon>add_circle_outline</mat-icon>
+                            </button>
+                        </label>
                     </mat-card-header>
+
+                    <table mat-table [dataSource]="appVersions" class="admin-table">
+                        <!-- App Name Column -->
+                        <ng-container matColumnDef="label">
+                            <th mat-header-cell *matHeaderCellDef i18n="@@app_version">Version</th>
+                            <td mat-cell *matCellDef="let ver">
+                                <a [routerLink]="[]" (click)="openVersionDialog(ver)">{{ver.label}}</a>
+                            </td>
+                        </ng-container>
+                        <!-- App Id Column -->
+                        <ng-container matColumnDef="description">
+                            <th mat-header-cell *matHeaderCellDef i18n="@@description">Description</th>
+                            <td mat-cell *matCellDef="let ver"> {{ver.description}} </td>
+                        </ng-container>
+                        <tr mat-row *matRowDef="let row; columns: versionDisplayedColumns;"></tr>
+                    </table>
+
                 </mat-tab>
             </mat-tab-group>
         </mat-card-content>

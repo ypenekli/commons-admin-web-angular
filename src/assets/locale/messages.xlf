@@ -46,6 +46,14 @@
           <context context-type="linenumber">26</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
@@ -94,11 +102,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">115</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">127</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.html</context>
@@ -106,7 +114,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">61</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.html</context>
@@ -144,6 +160,10 @@
           <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/auth/change-pwd/change-pwd.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
@@ -169,6 +189,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
           <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="parent_items" datatype="html">
@@ -240,12 +264,27 @@
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
           <context context-type="linenumber">107</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add_app_version" datatype="html">
+        <source>Add new version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="field_app_name" datatype="html">
         <source>application name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">52</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
@@ -257,11 +296,15 @@
         <source>description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
           <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/commons/comm-code-form/comm-code-form.component.ts</context>
@@ -273,7 +316,7 @@
         <source>function name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/app-form.component.ts</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">54</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/apps/app-form/func-dialog.component.ts</context>
@@ -298,6 +341,41 @@
           <context context-type="sourcefile">src/app/components/groups/group-form/group-form.component.html</context>
           <context context-type="linenumber">63</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="publishdate" datatype="html">
+        <source>Publish Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="field_version" datatype="html">
+        <source>application version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_app_func_id" datatype="html">
+        <source>app function name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
+      </trans-unit>
+      <trans-unit id="field_publish_date" datatype="html">
+        <source>publish date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/apps/app-form/version-dialog.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">FieldName</note>
       </trans-unit>
       <trans-unit id="apps_name" datatype="html">
         <source> App Name </source>

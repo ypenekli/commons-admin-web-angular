@@ -15,17 +15,18 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppFormComponent } from './app-form/app-form.component';
 import { AppListComponent } from './app-list/app-list.component';
 import { AppModel } from 'src/app/model/repositories/app.repository';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatDialogModule} from '@angular/material/dialog';
 import { FuncDialogComponent } from './app-form/func-dialog.component';
+import { VersionDialogComponent } from './app-form/version-dialog.component';
 
 
 
 @NgModule({
-  declarations: [AppFormComponent, AppListComponent, FuncDialogComponent],
+  declarations: [AppFormComponent, AppListComponent, FuncDialogComponent, VersionDialogComponent],
   imports: [  
     CommonModule, 
     BrowserModule, 

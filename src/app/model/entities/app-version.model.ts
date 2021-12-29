@@ -79,6 +79,12 @@ export class AppVersion extends DataEntity{
         this.mPublishDate = value;      
         this.setDate('publish_date', value, true);
     }
+
+    public toString = () : string => {
+        //{{appVers.label + ' : ' + (appVers.publishDate | date :'shortDate')}}
+        return this.label + ' : ' + (this.publishDate?.toLocaleDateString('tr') )
+    }
+
     static fromPlain(payload:Partial<DataEntity>){ 
         return DataEntity.fromPlain(payload, new AppVersion());
     }

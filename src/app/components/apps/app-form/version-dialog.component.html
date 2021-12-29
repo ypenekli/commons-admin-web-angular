@@ -1,0 +1,47 @@
+<mat-card fxFlex.xs="100%">
+    <form #versionForm="ngForm" (ngSubmit)="saveVersion(versionForm)" autocomplete="of" fxLayout="column wrap"
+        fxLayoutAlign="center center" fxLayoutGap="3px">
+        <table class="admin-form-header-table">
+            <tr>
+                <th style="text-align: left" i18n="@@app_version">Version</th>
+                <td>: {{appVersion.label}}</td>
+                <th>({{modeLabel}})</th>
+            </tr>
+        </table>
+        <p>
+            <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
+                <mat-label i18n="@@description">Description</mat-label>
+                <textarea matInput required minlength="2" maxlength="150" [(ngModel)]="appVersion.description"
+                    name="description" #description="ngModel"></textarea>
+                <div *ngIf="hasErrors(description)">
+                    <mat-error *ngFor="let error of getErrors(description)">{{error}}</mat-error>
+                </div>
+            </mat-form-field>
+        </p>
+        <mat-form-field class="admin-full-width" style='--maxwidth:250px' appearance="fill">
+            <mat-label i18n="@@app_funcs">Functions</mat-label>
+            <select matNativeControl name="appFuncId" [(ngModel)]="appVersion.appFuncId">
+                <option value="" selected></option>
+                <option *ngFor="let func of appFuncs" [value]="func.id">
+                    {{func.name}}
+                </option>
+            </select>
+        </mat-form-field>
+        <p>
+            <mat-form-field class="admin-full-width" style='--maxwidth:200px' appearance="fill">
+                <span *ngIf="appVersion.idx == -1">
+                    <mat-label i18n="@@publishdate">Publish Date</mat-label>
+                    <input matInput [matDatepicker]="picker" name="publishdate" [(ngModel)]="appVersion.publishDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </span>
+                {{appVersion.publishDate | date :'shortDate'}}
+            </mat-form-field>
+
+        <div mat-dialog-actions>
+            <button mat-button [mat-dialog-close]="appVersion" cdkFocusInitial i18n="@@save" mat-raised-button
+                color="primary" type="submit" [disabled]="!versionForm.valid">Save</button>
+            <button i18n="@@cancel" mat-raised-button color="warn" (click)="onCancel()" type="button">Cancel</button>
+        </div>
+    </form>
+</mat-card>

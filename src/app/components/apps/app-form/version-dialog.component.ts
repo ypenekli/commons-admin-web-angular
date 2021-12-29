@@ -5,41 +5,43 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { ActivatedRoute } from "@angular/router";
 import { BaseForm } from "src/app/model/base-form";
 import { AppFunc } from "src/app/model/entities/app-func.model";
+import { AppVersion } from "src/app/model/entities/app-version.model";
 import { AppFuncModel } from "src/app/model/repositories/app-func.repository";
-import { AppModel } from "src/app/model/repositories/app.repository";
+import { AppVersionModel } from "src/app/model/repositories/app-versions.repository";
 import { Session } from "src/app/model/session.model";
-import { Reference } from "src/service/reference.model";
 
 
 @Component({
     selector: 'app-func-dialog',
-    templateUrl: './func-dialog.component.html',
+    templateUrl: './version-dialog.component.html',
     styleUrls: ['./app-form.component.css']
 })
-export class FuncDialogComponent extends BaseForm implements OnInit {
-
-    subAppFunc: AppFunc;
+export class VersionDialogComponent extends BaseForm implements OnInit {
+   
+    appVersion:AppVersion;
 
     constructor(
         private session: Session,
         private aRoute: ActivatedRoute,
         private appFuncRepository: AppFuncModel,
+        private appVersionRepository: AppVersionModel,
         private snackBar: MatSnackBar,
 
-        public dialogRef: MatDialogRef<FuncDialogComponent>,
+        public dialogRef: MatDialogRef<VersionDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any,
     ) {
         super(aRoute);
-        this.subAppFunc = data.subApppFunc;
+        this.appVersion = data.appVersion;        
     }
 
-    ngOnInit(): void {
+    ngOnInit(): void {       
         this.fieldsToValidate = new Map([
-            ["app_name", $localize`:FieldName@@field_app_name:application name`],
+            ["version", $localize`:FieldName@@field_version:application version`],
             ["description", $localize`:FieldName@@field_description:description`],
-            ["func_name", $localize`:FieldName@@field_func_name:function name`],
+            ["app_func_id", $localize`:FieldName@@field_app_func_id:app function name`],
+            ["publish_date", $localize`:FieldName@@field_publish_date:publish date`],
         ]);
-        if(!this.subAppFunc.isNew()){
+        if(!this.appVersion.isNew()){
             this.mode = 1;
         }
     }
@@ -48,21 +50,13 @@ export class FuncDialogComponent extends BaseForm implements OnInit {
         return Session.FORM_MODE[this.mode].value;
     }
 
-    get appTargets(): Reference<string>[] {
-        return AppModel.targets;
-    }
-
-    get funcTargets(): Reference<string>[] {
-        return AppFuncModel.targets;
-    }
-
     get appFuncs(): AppFunc[] {
         return this.appFuncRepository.getAppFuncs();
     }
 
-    saveFunc(form: NgForm) {
+    saveVersion(form: NgForm) {
         if (form.valid) {
-            this.appFuncRepository.saveFunc(this.subAppFunc, 1, this.session.getUser())
+            this.appVersionRepository.saveVersion(this.appVersion, this.session.getUser())
                 .subscribe(message => {
                     this.snackBar.open(message, $localize`:@@save:Save`, {
                         duration: 2000,
@@ -72,7 +66,7 @@ export class FuncDialogComponent extends BaseForm implements OnInit {
     }
 
     onCancel(): void {
-        this.subAppFunc.reject();
+        this.appVersion.reject();
         this.dialogRef.close();
     }
 }
