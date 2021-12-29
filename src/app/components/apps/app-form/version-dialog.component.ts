@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, ViewEncapsulation } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
@@ -14,7 +14,8 @@ import { Session } from "src/app/model/session.model";
 @Component({
     selector: 'app-func-dialog',
     templateUrl: './version-dialog.component.html',
-    styleUrls: ['./app-form.component.css']
+    styleUrls: ['./app-form.component.css'],
+    encapsulation: ViewEncapsulation.None 
 })
 export class VersionDialogComponent extends BaseForm implements OnInit {
    
@@ -41,7 +42,11 @@ export class VersionDialogComponent extends BaseForm implements OnInit {
             ["app_func_id", $localize`:FieldName@@field_app_func_id:app function name`],
             ["publish_date", $localize`:FieldName@@field_publish_date:publish date`],
         ]);
-        if(!this.appVersion.isNew()){
+        if(this.appVersion.isDeleted()){
+            this.mode = 3;
+        }else if(this.appVersion.isNew()){
+            this.mode = 0;
+        }else{
             this.mode = 1;
         }
     }

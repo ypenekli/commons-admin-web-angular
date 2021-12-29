@@ -2,7 +2,7 @@ import { DataEntity } from 'src/service/entity.model';
 
 export class AppVersion extends DataEntity{
     private static schema_name:string='COMMON';
-    private static table_name:string='APP_VERSIONS'; 
+    private static table_name:string='APP_VERSIONS';     
     
     constructor(appId?:string, version?:number, idx?:number){
         super();
@@ -78,6 +78,14 @@ export class AppVersion extends DataEntity{
     public set publishDate(value:Date | null){ 
         this.mPublishDate = value;      
         this.setDate('publish_date', value, true);
+    }
+
+    private mNewVersionNumber:boolean=false;
+    public get isNewVersionNumber():boolean{
+        return this.mNewVersionNumber;
+    }
+    public set newVersionNumber(value:boolean){
+        this.mNewVersionNumber = value;
     }
 
     public toString = () : string => {

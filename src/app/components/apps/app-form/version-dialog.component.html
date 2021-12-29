@@ -7,7 +7,19 @@
                 <td>: {{appVersion.label}}</td>
                 <th>({{modeLabel}})</th>
             </tr>
+            <tr *ngIf="!appVersion.isNewVersionNumber">
+                <th nowrap style="text-align: left" i18n="@@publishdate">Publish Date</th>
+                <td colspan="2">: {{appVersion.publishDate | date :'shortDate'}}</td>
+            </tr>
         </table>
+        <p>
+            <mat-form-field *ngIf="appVersion.isNewVersionNumber" class="admin-full-width" style='--maxwidth:200px'
+                appearance="fill">
+                <mat-label i18n="@@publishdate">Publish Date</mat-label>
+                <input matInput [matDatepicker]="picker" name="publishdate" [(ngModel)]="appVersion.publishDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
         <p>
             <mat-form-field class="admin-full-width" style='--maxwidth:400px'>
                 <mat-label i18n="@@description">Description</mat-label>
@@ -27,20 +39,11 @@
                 </option>
             </select>
         </mat-form-field>
-        <p>
-            <mat-form-field class="admin-full-width" style='--maxwidth:200px' appearance="fill">
-                <span *ngIf="appVersion.idx == -1">
-                    <mat-label i18n="@@publishdate">Publish Date</mat-label>
-                    <input matInput [matDatepicker]="picker" name="publishdate" [(ngModel)]="appVersion.publishDate">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </span>
-                {{appVersion.publishDate | date :'shortDate'}}
-            </mat-form-field>
 
         <div mat-dialog-actions>
-            <button mat-button [mat-dialog-close]="appVersion" cdkFocusInitial i18n="@@save" mat-raised-button
-                color="primary" type="submit" [disabled]="!versionForm.valid">Save</button>
+            <button *ngIf="!appVersion.isDeleted()" mat-button [mat-dialog-close]="appVersion" cdkFocusInitial
+                i18n="@@save" mat-raised-button color="primary" type="submit"
+                [disabled]="!versionForm.valid">Save</button>
             <button i18n="@@cancel" mat-raised-button color="warn" (click)="onCancel()" type="button">Cancel</button>
         </div>
     </form>

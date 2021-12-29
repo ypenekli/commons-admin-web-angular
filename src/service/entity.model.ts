@@ -217,7 +217,7 @@ export abstract class DataEntity{
         if(value != null && value.length > 7){
             return new Date(
                 +value.substr(0, 4), 
-                +value.substr(4, 2), 
+                (+value.substr(4, 2))-1, 
                 +value.substr(6, 2));
         } 
         return null;        
@@ -230,7 +230,7 @@ export abstract class DataEntity{
         if(value != null && value.length > 16){
             return new Date(
                 +value.substr(0, 4), 
-                +value.substr(4, 2), 
+                (+value.substr(4, 2))-1, 
                 +value.substr(6, 2),
                 +value.substr(8, 2),
                 +value.substr(10, 2),

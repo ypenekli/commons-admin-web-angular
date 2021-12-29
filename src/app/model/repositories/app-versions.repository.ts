@@ -66,8 +66,9 @@ export class AppVersionModel implements OnInit {
         let aNew: AppVersion;
         if(pIncrementVersionNumber){
             let k = this.generateKey();
-            aNew = new AppVersion(pAppId, k.version, -1);
+            aNew = new AppVersion(pAppId, k.version, 0);
             aNew.label = k.label;
+            aNew.newVersionNumber = true;
 
         }else{            
             if (this.appVersionKeys != null && this.appVersionKeys.length > 0) {

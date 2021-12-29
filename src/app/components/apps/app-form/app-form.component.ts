@@ -22,10 +22,10 @@ import { VersionDialogComponent } from './version-dialog.component';
 })
 export class AppFormComponent extends BaseForm implements OnInit {
   id: string = '-1';
-  version:number;
-  addNewVersion:boolean=false;
+  version: number;
+  addNewVersion: boolean = false;
   app: App;
-  appFunc: AppFunc | any;  
+  appFunc: AppFunc | any;
   private appNode: AppFunc[] = [];
 
   funcDisplayedColumns: string[] = ['abrv', 'name', 'id'];
@@ -82,7 +82,8 @@ export class AppFormComponent extends BaseForm implements OnInit {
   openFuncDialog(subApppFunc: AppFunc): void {
     const dialogRef = this.dialog.open(FuncDialogComponent,
       {
-        width: '350px',
+        width: '400px',
+        panelClass: 'dialog-container-custom',
         data: { subApppFunc: subApppFunc },
       });
 
@@ -93,12 +94,21 @@ export class AppFormComponent extends BaseForm implements OnInit {
   }
 
   openVersionDialog(appVersion?: AppVersion): void {
-    if(appVersion == null){
+    if (appVersion == null) {
       appVersion = this.appVersionRepository.addNewVersion(this.id, this.addNewVersion);
     }
+    let versions = this.appVersionRepository.getAppVersionKeys();
+    if (versions != null && versions.length > 0) {
+      let v: AppVersion = versions[0];
+      if (appVersion.version < v.version) {
+        appVersion.delete();
+      }
+    }
+
     const dialogRef = this.dialog.open(VersionDialogComponent,
       {
-        width: '350px',
+        width: '400px',
+        panelClass: 'dialog-container-custom',
         data: { appVersion: appVersion },
       });
 
@@ -176,11 +186,11 @@ export class AppFormComponent extends BaseForm implements OnInit {
       this.sellectAppFunc(this.appFunc.addSubItem(this.appFuncs.length, true));
     }
   }
-  onVersionSellect(){
+  onVersionSellect() {
     console.log("selection :" + this.version)
     this.appVersionRepository.getAppVersionKeys()
     this.appVersionRepository.findAppVersions(this.id, this.version)
-        .subscribe(res => { });
+      .subscribe(res => { });
   }
   get disableAddFunc(): boolean {
     return this.appFunc.isNew();
