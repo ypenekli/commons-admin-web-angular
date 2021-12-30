@@ -9,18 +9,18 @@ import { AppVersion } from "src/app/model/entities/app-version.model";
 import { AppFuncModel } from "src/app/model/repositories/app-func.repository";
 import { AppVersionModel } from "src/app/model/repositories/app-versions.repository";
 import { Session } from "src/app/model/session.model";
+import { Result } from "src/service/result.model";
 
 
 @Component({
     selector: 'app-func-dialog',
     templateUrl: './version-dialog.component.html',
     styleUrls: ['./app-form.component.css'],
-    encapsulation: ViewEncapsulation.None 
+    encapsulation: ViewEncapsulation.None
 })
 export class VersionDialogComponent extends BaseForm implements OnInit {
-   
-    appVersion:AppVersion;
 
+    appVersion: AppVersion;
     constructor(
         private session: Session,
         private aRoute: ActivatedRoute,
@@ -31,22 +31,22 @@ export class VersionDialogComponent extends BaseForm implements OnInit {
         public dialogRef: MatDialogRef<VersionDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any,
     ) {
-        super(aRoute);
-        this.appVersion = data.appVersion;        
+        super(aRoute);       
+        this.appVersion = this.data.versionResult.getData();
     }
 
-    ngOnInit(): void {       
+    ngOnInit(): void {
         this.fieldsToValidate = new Map([
             ["version", $localize`:FieldName@@field_version:application version`],
             ["description", $localize`:FieldName@@field_description:description`],
             ["app_func_id", $localize`:FieldName@@field_app_func_id:app function name`],
             ["publish_date", $localize`:FieldName@@field_publish_date:publish date`],
         ]);
-        if(this.appVersion.isDeleted()){
+        if (this.appVersion.isDeleted()) {
             this.mode = 3;
-        }else if(this.appVersion.isNew()){
+        } else if (this.appVersion.isNew()) {
             this.mode = 0;
-        }else{
+        } else {
             this.mode = 1;
         }
     }
@@ -59,13 +59,16 @@ export class VersionDialogComponent extends BaseForm implements OnInit {
         return this.appFuncRepository.getAppFuncs();
     }
 
+
     saveVersion(form: NgForm) {
         if (form.valid) {
             this.appVersionRepository.saveVersion(this.appVersion, this.session.getUser())
-                .subscribe(message => {
-                    this.snackBar.open(message, $localize`:@@save:Save`, {
+                .subscribe(res => {
+                    this.snackBar.open(res.getMessage(), $localize`:@@save:Save`, {
                         duration: 2000,
-                    });
+                    });                    
+                   // this.data.versionResult = res;
+                    this.dialogRef.componentInstance.data = { versionResult:res };
                 });
         }
     }

@@ -1,6 +1,6 @@
 <mat-card fxFlex.xs="100%">
-    <form #versionForm="ngForm" (ngSubmit)="saveVersion(versionForm)" autocomplete="of" fxLayout="column wrap"
-        fxLayoutAlign="center center" fxLayoutGap="3px">
+    <form *ngIf="!appVersion.isDeleted()" #versionForm="ngForm" (ngSubmit)="saveVersion(versionForm)" autocomplete="of"
+        fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="3px">
         <table class="admin-form-header-table">
             <tr>
                 <th style="text-align: left" i18n="@@app_version">Version</th>
@@ -41,10 +41,43 @@
         </mat-form-field>
 
         <div mat-dialog-actions>
-            <button *ngIf="!appVersion.isDeleted()" mat-button [mat-dialog-close]="appVersion" cdkFocusInitial
-                i18n="@@save" mat-raised-button color="primary" type="submit"
-                [disabled]="!versionForm.valid">Save</button>
+            <button mat-button [mat-dialog-close]="data.versionResult" cdkFocusInitial i18n="@@save" mat-raised-button
+                color="primary" type="submit" [disabled]="!versionForm.valid">Save</button>
             <button i18n="@@cancel" mat-raised-button color="warn" (click)="onCancel()" type="button">Cancel</button>
         </div>
     </form>
+
+    <table *ngIf="appVersion.isDeleted()" class="admin-form-header-table">
+        <tr>
+            <th style="text-align: left" i18n="@@app_version">Version</th>
+            <td>: {{appVersion.label}}</td>
+            <th>({{modeLabel}})</th>
+        </tr>
+        <tr>
+            <th nowrap style="text-align: left" i18n="@@publishdate">Publish Date</th>
+            <td colspan="2">: {{appVersion.publishDate | date :'shortDate'}}</td>
+        </tr>
+        <tr>
+            <th nowrap style="text-align: left" colspan="3">
+                <mat-label i18n="@@description">Description</mat-label>
+            </th>
+        </tr>
+        <tr>
+            <td nowrap style="text-align: left" colspan="3">{{appVersion.description}}</td>
+        </tr>
+        <tr>
+            <th nowrap style="text-align: left" colspan="3">
+                <mat-label i18n="@@app_funcs">Functions</mat-label>
+            </th>
+        </tr>
+        <tr>
+            <td nowrap style="text-align: left" colspan="3">{{appVersion.appFuncName}}</td>
+        </tr>
+        <tr>
+            <td nowrap style="text-align: left" colspan="3">
+                <button i18n="@@cancel" mat-raised-button color="warn" (click)="onCancel()"
+                    type="button">Cancel</button>
+            </td>
+        </tr>
+    </table>
 </mat-card>

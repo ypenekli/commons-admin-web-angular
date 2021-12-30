@@ -12,6 +12,7 @@ import { AppVersionModel } from 'src/app/model/repositories/app-versions.reposit
 import { AppModel } from 'src/app/model/repositories/app.repository';
 import { Session } from 'src/app/model/session.model';
 import { Reference } from 'src/service/reference.model';
+import { Result } from 'src/service/result.model';
 import { FuncDialogComponent } from './func-dialog.component';
 import { VersionDialogComponent } from './version-dialog.component';
 
@@ -94,7 +95,9 @@ export class AppFormComponent extends BaseForm implements OnInit {
   }
 
   openVersionDialog(appVersion?: AppVersion): void {
+    let addNew: boolean = false;
     if (appVersion == null) {
+      addNew = true;
       appVersion = this.appVersionRepository.addNewVersion(this.id, this.addNewVersion);
     }
     let versions = this.appVersionRepository.getAppVersionKeys();
@@ -105,16 +108,24 @@ export class AppFormComponent extends BaseForm implements OnInit {
       }
     }
 
+    let versionResult: Result<AppVersion> = new Result(false, "", appVersion, 0);
     const dialogRef = this.dialog.open(VersionDialogComponent,
       {
         width: '400px',
         panelClass: 'dialog-container-custom',
-        data: { appVersion: appVersion },
+        data: { versionResult: versionResult },
       });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      //this.appFunc = result;
+    dialogRef.afterClosed().subscribe(versionResult => {
+      this.addNewVersion = false;
+      let res = dialogRef.componentInstance.data.versionResult;
+      if (addNew && res != null && res.isSuccess()) {
+        this.version = res.getData().version;
+        if (!this.addNewVersion) {
+          this.appVersionRepository.findAppVersions(this.id, this.version)
+            .subscribe(res => { console.log("liste güncel") });
+        }
+      }
     });
   }
 
@@ -187,8 +198,7 @@ export class AppFormComponent extends BaseForm implements OnInit {
     }
   }
   onVersionSellect() {
-    console.log("selection :" + this.version)
-    this.appVersionRepository.getAppVersionKeys()
+    //this.appVersionRepository.getAppVersionKeys()
     this.appVersionRepository.findAppVersions(this.id, this.version)
       .subscribe(res => { });
   }

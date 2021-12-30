@@ -42,7 +42,6 @@ export class AppVersionModel implements OnInit {
                 this.appVersionKeys = new Array();
                 if (appVersionKeys != null) {
                     this.appVersionKeys = appVersionKeys.map(partial => AppVersion.fromPlain(partial));
-                   // this.addNewVersion(pAppId);
                 }
                 return true;
             }));
@@ -62,42 +61,65 @@ export class AppVersionModel implements OnInit {
             }));
     }
 
-    addNewVersion(pAppId: string, pIncrementVersionNumber:boolean) : AppVersion{
+    addNewVersion(pAppId: string, pIncrementVersionNumber: boolean): AppVersion {
         let aNew: AppVersion;
-        if(pIncrementVersionNumber){
+        if (pIncrementVersionNumber) {
             let k = this.generateKey();
             aNew = new AppVersion(pAppId, k.version, 0);
             aNew.label = k.label;
             aNew.newVersionNumber = true;
 
-        }else{            
+        } else {
             if (this.appVersionKeys != null && this.appVersionKeys.length > 0) {
                 let v: AppVersion = this.appVersionKeys[0];
-                aNew = new AppVersion(pAppId, v.version, this.appVersions.length + 1);
+                aNew = new AppVersion(pAppId, v.version, this.getVersionCount(this.appVersions, v.version));
                 aNew.label = v.label;
                 aNew.publishDate = v.publishDate;
-            }else{
-                aNew = new AppVersion(pAppId, 100, 0);  
+            } else {
+                aNew = new AppVersion(pAppId, 100, 0);
                 aNew.label = '1.0.0';
             }
         }
-        //this.appVersionKeys.unshift(aNew);
         return aNew;
     }
 
+    getVersionCount(versions: AppVersion[], version: number): number {
+        let list = versions.filter(e => e.version == version);
+        if (list != null)
+            return list.length;
+        else return 0;
+    }
+
     generateKey() {
-        let k:number = 100;       
+        let k: number = 100;
         if (this.appVersionKeys != null && this.appVersionKeys.length > 0) {
             let v: AppVersion = this.appVersionKeys[0];
             k = v.version;
         }
         k = ++k;
         let l1: string = k.toString();
-        let l2: string = l1[0] + '.' + l1[1] + '.' + l1[2];       
+        let l2: string = l1[0] + '.' + l1[1] + '.' + l1[2];
         return { 'version': k, 'label': l2 };
     }
 
-    saveVersion(appVersion: AppVersion, user: User): Observable<string> {
+    checkAppVersionKeys(appVersion: AppVersion) {
+        let appVersionKey: AppVersion;
+        let addNew: boolean = false;
+        if (this.appVersionKeys != null && this.appVersionKeys.length > 0) {
+            let k: AppVersion = this.appVersionKeys[0];
+            addNew = appVersion.version > k.version;
+        } else {
+            addNew = true;
+        }
+        if (addNew) {
+            appVersionKey = new AppVersion(appVersion.appId, appVersion.version, 0);
+            appVersionKey.label = appVersion.label;
+            appVersionKey.publishDate = appVersion.publishDate;
+            appVersionKey.accept()
+            this.appVersionKeys.unshift(appVersionKey);
+        }
+    }
+    saveVersion(appVersion: AppVersion, user: User): Observable<Result<AppVersion>> {
         //this.result = null;
         appVersion = RestService.setLastUserInfo(appVersion, user.email);
         let isNew: boolean = appVersion.isNew();
@@ -114,10 +136,11 @@ export class AppVersionModel implements OnInit {
                         appVersion.accept();
                     }
                     if (isNew) {
-                        this.appVersions.push(appVersion);
+                        // this.appVersions.unshift(appVersion);
+                        this.checkAppVersionKeys(appVersion);
                     }
                 }
-                return this.result.getMessage();
+                return this.result;
             }));
 
     }
